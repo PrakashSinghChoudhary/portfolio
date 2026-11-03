@@ -93,7 +93,7 @@ export default function Header() {
             </Link>
             <a
               href="https://github.com/PrakashSinghChoudhary"
-              className="text-[13px] font-normal tracking-[-0.01em] text-(--text-2) hover:text-(--text) transition-colors"
+              className="text-(--text-2)"
               target="_blank"
               rel="noopener noreferrer"
             >
