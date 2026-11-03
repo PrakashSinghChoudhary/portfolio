@@ -1,9 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (path: string) =>
+    pathname === path || pathname.startsWith(path + "/");
+
+  const activeStyle = "font-medium text-(--text) underline underline-offset-4";
+  const inActiveStyle = "font-normal text-(--text-2) hover:text-(--text)";
+
   return (
     <header
       className="sticky z-30 w-full border-b bg-(--bg)/80 backdrop-blur-md"
@@ -20,7 +28,9 @@ export default function Header() {
           <nav className="hidden items-center gap-7 md:flex">
             <Link
               href="/blog"
-              className="text-[13px] font-medium tracking-[-0.01em] text-(--text)"
+              className={`text-[13px] font-medium tracking-[-0.01em] text-(--text) ${
+                isActive("/blog") ? activeStyle : inActiveStyle
+              }`}
             >
               Blog
             </Link>
@@ -34,7 +44,9 @@ export default function Header() {
             </a>
             <Link
               href="/about"
-              className="text-[13px] font-normal tracking-[-0.01em] text-(--text-2) hover:text-(--text) transition-colors"
+              className={`text-[13px] font-medium tracking-[-0.01em] text-(--text) ${
+                isActive("/about") ? activeStyle : inActiveStyle
+              }`}
             >
               About
             </Link>
@@ -44,7 +56,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-2 text-[11px] font-mono tracking-[0.08em] text-(--text-3)">
             <span className="h-1.25 w-1.25 rounded-full bg-[#22c55e] inline-block" />
-            BUILD 2024.11.14
+            AVAILABLE FOR WORK
           </div>
           <button
             onClick={() => setMenuOpen((v) => !v)}
@@ -73,7 +85,9 @@ export default function Header() {
             <Link
               href="/blog"
               onClick={() => setMenuOpen(false)}
-              className="text-[14px] font-medium"
+              className={`text-(--text-2) ${
+                isActive("/blog") ? activeStyle : inActiveStyle
+              }`}
             >
               Blog
             </Link>
@@ -88,7 +102,9 @@ export default function Header() {
             <Link
               href="/about"
               onClick={() => setMenuOpen(false)}
-              className="text-(--text-2)"
+              className={`text-(--text-2) ${
+                isActive("/about") ? activeStyle : inActiveStyle
+              }`}
             >
               About
             </Link>
