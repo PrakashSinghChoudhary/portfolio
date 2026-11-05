@@ -60,8 +60,7 @@ export default function Header() {
           </div>
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden flex h-8 w-8 items-center justify-center rounded-md border text-(--text-2)"
-            style={{ borderColor: "var(--border)" }}
+            className="md:hidden flex h-8 w-8 items-center justify-center rounded-md border text-(--text-2) border-(--border)"
             aria-label="Toggle menu"
           >
             <span className="flex flex-col gap-0.75">
