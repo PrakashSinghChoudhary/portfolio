@@ -73,12 +73,12 @@ export default function APIGatewayPage() {
           className="col-span-12 lg:col-span-8 lg:border-r lg:pr-10 pb-16 border-(--border)"
         >
           <div className="prose max-w-none pt-8">
-            <p className="content">
+            <p className="main-content">
               An API Gateway is a single entry point through which clients
               (frontend applications, mobile apps, etc.) communicate with
               multiple backend services.
             </p>
-            <p className="content">
+            <p className="main-content">
               The evolution of API Gateways parallels the rise of microservices
               architecture. As monolithic applications were broken down into
               smaller, specialized services, the need for a centralized point of
@@ -95,7 +95,7 @@ export default function APIGatewayPage() {
             />
           </div>
           <Pointer {...tableOfContent[0]} />
-          <p className="content-dark mt-12!">
+          <p className="content mt-12!">
             The concept of API Gateways became increasingly popular in the early
             2010s, alongside the growing adoption of microservices architecture.
             As applications evolved, many organizations started moving away from
@@ -104,7 +104,7 @@ export default function APIGatewayPage() {
             where an application is divided into multiple small, independently
             deployable services.{" "}
           </p>
-          <p className="content-dark">
+          <p className="content">
             However, this architectural shift introduced a new challenge.
             Instead of communicating with a single backend application, the
             frontend now had to communicate with multiple independent services,
@@ -112,7 +112,7 @@ export default function APIGatewayPage() {
             business logic. Managing these interactions directly from the client
             became increasingly complicated.{" "}
           </p>{" "}
-          <p className="content-dark">
+          <p className="content">
             This is where the API Gateway pattern became useful. An API Gateway
             acts as a single entry point between clients and backend services.
             Instead of communicating with multiple services directly, clients
@@ -120,20 +120,20 @@ export default function APIGatewayPage() {
             service should handle each request and forwards it accordingly.
           </p>
           <Pointer {...tableOfContent[1]} />
-          <p className="content-dark mt-12!">
+          <p className="content mt-12!">
             In a microservices architecture, an API Gateway sits in front of
             multiple backend services, such as User Service, Product Service,
             Order Service, and Payment Service. When a client makes a request,
             the API Gateway routes it to the appropriate service based on the
             requested endpoint.
           </p>
-          <p className="content-dark">
+          <p className="content">
             Apart from routing, an API Gateway can also handle several common
             responsibilities, such as authentication, rate limiting, logging,
             caching, and request aggregation. This prevents every microservice
             from having to implement these common functionalities independently.
           </p>
-          <p className="content-dark">
+          <p className="content">
             For example, consider an e-commerce application where the frontend
             needs to retrieve user information, recent orders, and payment
             history. Without an API Gateway, the frontend might need to make
@@ -142,7 +142,7 @@ export default function APIGatewayPage() {
             communicate with all three services, combine their responses, and
             return a single response to the client.
           </p>
-          <p className="content-dark">
+          <p className="content">
             This makes communication between clients and microservices simpler
             and provides a centralized place to manage common API-related
             concerns.
@@ -156,26 +156,26 @@ export default function APIGatewayPage() {
             className="image"
           />
           <Pointer {...tableOfContent[2]} />
-          <p className="content-dark mt-12!">
+          <p className="content mt-12!">
             Although API Gateways are commonly associated with microservices
             architecture, they are not exclusive to it. A monolithic application
             can also benefit from using an API Gateway.
           </p>
-          <p className="content-dark">
+          <p className="content">
             In a monolithic architecture, the entire backend application is
             typically deployed as a single unit. It might contain different
             modules, such as User Management, Products, Orders, and Payments,
             but all these modules belong to the same application and are usually
             exposed through a single backend server.
           </p>
-          <p className="content-dark">
+          <p className="content">
             Even in this architecture, an API Gateway can sit in front of the
             monolithic application and act as the entry point for incoming
             client requests. The gateway can handle responsibilities such as
             authentication, rate limiting, logging, caching, SSL termination,
             and routing before forwarding requests to the monolithic backend.
           </p>
-          <p className="content-dark">
+          <p className="content">
             For example, imagine a monolithic e-commerce application deployed on
             a single backend server. Instead of allowing clients to communicate
             directly with the backend, all requests can first pass through an
@@ -183,7 +183,7 @@ export default function APIGatewayPage() {
             rate limits, and then forward the requests to the appropriate
             endpoints in the monolithic application.
           </p>
-          <p className="content-dark">
+          <p className="content">
             Therefore, an API Gateway is an architectural pattern that can be
             used with both monolithic and microservices architectures. While it
             becomes particularly useful in microservices because of the need to
