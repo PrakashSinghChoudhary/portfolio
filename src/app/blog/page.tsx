@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
+import Reveal from "@/components/Reveal";
 
 export type Post = {
   id: string;
@@ -172,58 +173,70 @@ export default function BlogPage() {
       <section className="grid grid-cols-12 gap-0 border-b pb-16 pt-10 md:pt-16 lg:pt-[72px] border-(--border)">
         {/* Left Meta & Headline */}
         <div className="col-span-12 lg:col-span-5 lg:pr-12">
-          <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono tracking-[0.1em] text-(--text-3)">
-            <span className="inline-flex items-center gap-2 rounded-full border border-(--border-strong) bg-(--bg-2) px-2.5 py-[3px] text-[10px] font-medium tracking-[0.08em] text-(--text)">
-              <span className="h-1.5 w-1.5 rounded-full bg-(--text)" />
-              FEATURED ARTICLE
-            </span>
-            <span>{featured.date}</span>
-            <span className="h-[1px] w-6 bg-(--border-strong)" />
-            <span className="text-(--text-2)">{featured.read}</span>
-          </div>
-
-          <h1 className="mt-6 text-[36px] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[46px] lg:text-[50px] text-(--text)">
-            <Link
-              href={featured.href}
-              className="hover:underline underline-offset-4 transition-all"
-            >
-              {featured.title}
-            </Link>
-          </h1>
-
-          <p className="mt-5 text-[15px] leading-[1.65] text-(--text-2) md:text-[16px]">
-            {featured.excerpt}
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href={featured.href}
-              className="group inline-flex h-[36px] items-center gap-2 rounded-full bg-(--text) px-5 text-[12px] font-medium tracking-[-0.01em] text-(--bg) transition-opacity hover:opacity-90"
-            >
-              Read Full Article
-              <span className="transition-transform group-hover:translate-x-[2px]">
-                →
+          <Reveal delay={40}>
+            <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono tracking-[0.1em] text-(--text-3)">
+              <span className="inline-flex items-center gap-2 rounded-full border border-(--border-strong) bg-(--bg-2) px-2.5 py-[3px] text-[10px] font-medium tracking-[0.08em] text-(--text)">
+                <span className="h-1.5 w-1.5 rounded-full bg-(--text)" />
+                FEATURED ARTICLE
               </span>
-            </Link>
-            <span className="text-[11px] font-mono tracking-[0.08em] text-(--text-3)">
-              {featured.tag}
-            </span>
-          </div>
+              <span>{featured.date}</span>
+              <span className="h-[1px] w-6 bg-(--border-strong)" />
+              <span className="text-(--text-2)">{featured.read}</span>
+            </div>
+          </Reveal>
 
-          <div className="mt-12 hidden lg:flex items-center gap-2 text-[11px] font-mono text-(--text-3)">
-            <div className="h-px w-12 bg-(--border-strong)" />
-            SCROLL FOR ARCHIVE
-          </div>
+          <Reveal delay={100}>
+            <h1 className="mt-6 text-[36px] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[46px] lg:text-[50px] text-(--text)">
+              <Link
+                href={featured.href}
+                className="hover:underline underline-offset-4 transition-all"
+              >
+                {featured.title}
+              </Link>
+            </h1>
+          </Reveal>
+
+          <Reveal delay={160}>
+            <p className="mt-5 text-[15px] leading-[1.65] text-(--text-2) md:text-[16px]">
+              {featured.excerpt}
+            </p>
+          </Reveal>
+
+          <Reveal delay={220}>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href={featured.href}
+                className="group inline-flex h-[36px] items-center gap-2 rounded-full bg-(--text) px-5 text-[12px] font-medium tracking-[-0.01em] text-(--bg) transition-opacity hover:opacity-90"
+              >
+                Read Full Article
+                <span className="transition-transform group-hover:translate-x-[2px]">
+                  →
+                </span>
+              </Link>
+              <span className="text-[11px] font-mono tracking-[0.08em] text-(--text-3)">
+                {featured.tag}
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={280}>
+            <div className="mt-12 hidden lg:flex items-center gap-2 text-[11px] font-mono text-(--text-3)">
+              <div className="h-px w-12 bg-(--border-strong)" />
+              SCROLL FOR ARCHIVE
+            </div>
+          </Reveal>
         </div>
 
         {/* Right Code Block */}
         <div className="col-span-12 mt-10 lg:col-span-7 lg:mt-0 lg:pl-8">
-          <CodeBlock
-            filename="DatabaseConnectionPool.ts"
-            langLabel="TypeScript"
-            code={SINGLETON_HERO_CODE}
-            className="my-0 shadow-xs"
-          />
+          <Reveal delay={120}>
+            <CodeBlock
+              filename="DatabaseConnectionPool.ts"
+              langLabel="TypeScript"
+              code={SINGLETON_HERO_CODE}
+              className="my-0 shadow-xs"
+            />
+          </Reveal>
         </div>
       </section>
 
@@ -235,99 +248,104 @@ export default function BlogPage() {
           className="col-span-12 lg:col-span-8 lg:border-r lg:pr-10 border-(--border)"
         >
           {/* List Header */}
-          <div className="flex items-center justify-between border-b py-6 border-(--border)">
-            <div className="flex items-center gap-3">
-              <h2 className="text-[13px] font-semibold tracking-[0.08em] uppercase">
-                Articles &amp; Essays
-              </h2>
-              <span className="text-[11px] font-mono text-(--text-3)">
-                / {postsToShow.length} {postsToShow.length === 1 ? "POST" : "POSTS"}
-              </span>
+          <Reveal delay={0}>
+            <div className="flex items-center justify-between border-b py-6 border-(--border)">
+              <div className="flex items-center gap-3">
+                <h2 className="text-[13px] font-semibold tracking-[0.08em] uppercase">
+                  Articles &amp; Essays
+                </h2>
+                <span className="text-[11px] font-mono text-(--text-3)">
+                  / {postsToShow.length} {postsToShow.length === 1 ? "POST" : "POSTS"}
+                </span>
+              </div>
+              <div className="hidden items-center gap-2 md:flex text-[11px] font-mono text-(--text-3)">
+                <span>SORT:</span>
+                <span className="text-(--text) underline decoration-(--border-strong) underline-offset-4">
+                  CHRONOLOGICAL
+                </span>
+              </div>
             </div>
-            <div className="hidden items-center gap-2 md:flex text-[11px] font-mono text-(--text-3)">
-              <span>SORT:</span>
-              <span className="text-(--text) underline decoration-(--border-strong) underline-offset-4">
-                CHRONOLOGICAL
-              </span>
-            </div>
-          </div>
+          </Reveal>
 
           {/* Article List Items */}
           <div className="divide-y border-(--border)">
-            {postsToShow.map((post) => (
-              <article
-                key={post.id}
-                className="group relative flex gap-6 py-8 md:gap-8 md:py-10 transition-colors hover:bg-(--bg-2)/60 -mx-3 px-3 md:-mx-4 md:px-4 lg:-mx-6 lg:px-6 rounded-xl"
-              >
-                {/* Desktop Meta Column */}
-                <div className="hidden shrink-0 flex-col items-start gap-1 pt-1 md:flex w-[100px]">
-                  <span className="text-[10px] font-mono tracking-[0.08em] text-(--text-3)">
-                    {post.id}
-                  </span>
-                  <span className="text-[11px] font-mono leading-[1.2] text-(--text-3)">
-                    {post.date}
-                  </span>
-                </div>
-
-                {/* Article Content */}
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="inline-flex h-[20px] items-center rounded-sm border bg-(--bg) px-2 text-[10px] font-medium tracking-[0.08em] text-(--text-2) border-(--border)">
-                      {post.tag}
+            {postsToShow.map((post, idx) => (
+              <Reveal key={post.id} delay={idx * 50}>
+                <article
+                  className="group relative flex gap-6 py-8 md:gap-8 md:py-10 transition-colors hover:bg-(--bg-2)/60 -mx-3 px-3 md:-mx-4 md:px-4 lg:-mx-6 lg:px-6 rounded-xl"
+                >
+                  {/* Desktop Meta Column */}
+                  <div className="hidden shrink-0 flex-col items-start gap-1 pt-1 md:flex w-[100px]">
+                    <span className="text-[10px] font-mono tracking-[0.08em] text-(--text-3)">
+                      {post.id}
                     </span>
-                    <span className="text-[11px] font-mono text-(--text-3) md:hidden">
-                      {post.date} • {post.read}
-                    </span>
-                    <span className="hidden text-[11px] font-mono text-(--text-3) md:inline">
-                      {post.read}
+                    <span className="text-[11px] font-mono leading-[1.2] text-(--text-3)">
+                      {post.date}
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] md:text-[22px] text-(--text)">
-                    <Link
-                      href={post.href}
-                      className="hover:underline underline-offset-4 transition-all"
-                    >
-                      {post.title}
-                    </Link>
-                  </h3>
+                  {/* Article Content */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="inline-flex h-[20px] items-center rounded-sm border bg-(--bg) px-2 text-[10px] font-medium tracking-[0.08em] text-(--text-2) border-(--border)">
+                        {post.tag}
+                      </span>
+                      <span className="text-[11px] font-mono text-(--text-3) md:hidden">
+                        {post.date} • {post.read}
+                      </span>
+                      <span className="hidden text-[11px] font-mono text-(--text-3) md:inline">
+                        {post.read}
+                      </span>
+                    </div>
 
-                  <p className="mt-2.5 max-w-[56ch] text-[14px] leading-[1.65] text-(--text-2)">
-                    {post.excerpt}
-                  </p>
+                    <h3 className="mt-3 text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] md:text-[22px] text-(--text)">
+                      <Link
+                        href={post.href}
+                        className="hover:underline underline-offset-4 transition-all"
+                      >
+                        {post.title}
+                      </Link>
+                    </h3>
 
-                  <div className="mt-4 flex items-center gap-2 text-[11px] font-mono text-(--text-3)">
-                    <span className="inline-block h-px w-6 bg-(--border-strong) group-hover:w-10 group-hover:bg-(--text) transition-all" />
-                    <Link
-                      href={post.href}
-                      className="group-hover:text-(--text) transition-colors flex items-center gap-1 font-medium text-(--text-2)"
-                    >
-                      READ ARTICLE →
-                    </Link>
+                    <p className="mt-2.5 max-w-[56ch] text-[14px] leading-[1.65] text-(--text-2)">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-4 flex items-center gap-2 text-[11px] font-mono text-(--text-3)">
+                      <span className="inline-block h-px w-6 bg-(--border-strong) group-hover:w-10 group-hover:bg-(--text) transition-all" />
+                      <Link
+                        href={post.href}
+                        className="group-hover:text-(--text) transition-colors flex items-center gap-1 font-medium text-(--text-2)"
+                      >
+                        READ ARTICLE →
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
 
           {/* Bottom Archive Nav */}
-          <div className="flex items-center justify-between border-y py-6 text-[11px] font-mono border-(--border)">
-            <span className="text-(--text-3)">ENGINEERING ARCHIVE</span>
-            <div className="flex gap-4">
-              <a
-                href="#writing"
-                className="hover:text-(--text) hover:underline underline-offset-4"
-              >
-                TOP OF ARCHIVE ↑
-              </a>
-              <Link
-                href="/"
-                className="hover:text-(--text) hover:underline underline-offset-4"
-              >
-                HOME PORTFOLIO →
-              </Link>
+          <Reveal delay={0}>
+            <div className="flex items-center justify-between border-y py-6 text-[11px] font-mono border-(--border)">
+              <span className="text-(--text-3)">ENGINEERING ARCHIVE</span>
+              <div className="flex gap-4">
+                <a
+                  href="#writing"
+                  className="hover:text-(--text) hover:underline underline-offset-4"
+                >
+                  TOP OF ARCHIVE ↑
+                </a>
+                <Link
+                  href="/"
+                  className="hover:text-(--text) hover:underline underline-offset-4"
+                >
+                  HOME PORTFOLIO →
+                </Link>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </main>
 
         {/* Sidebar */}
@@ -337,110 +355,115 @@ export default function BlogPage() {
         >
           <div className="lg:sticky lg:top-[80px]">
             {/* Author / Engineering Profile */}
-            <div className="border-b py-8 border-(--border)">
-              <div className="flex items-start gap-4">
-                <div className="h-10 w-10 shrink-0 rounded-full border-2 border-(--text) bg-(--bg-2) flex items-center justify-center font-mono text-[13px] font-bold text-(--text)">
-                  P
-                </div>
-                <div>
-                  <h4 className="text-[14px] font-semibold tracking-[-0.01em] text-(--text)">
-                    Prakash Choudhary
-                  </h4>
-                  <p className="mt-1 font-mono text-[11px] text-(--text-2)">
-                    Senior Full-Stack Engineer
-                  </p>
-                  <p className="mt-2.5 max-w-[30ch] text-[13px] leading-[1.6] text-(--text-2)">
-                    Notes on distributed systems, design patterns, and full-stack software architecture with React, TypeScript, and Express.js.
-                  </p>
-                  <div className="mt-3 flex gap-2 font-mono text-[11px]">
-                    <a
-                      href="https://github.com/PrakashSinghChoudhary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 decoration-(--border-strong) hover:text-(--text) transition-colors"
-                    >
-                      GITHUB
-                    </a>
-                    <span className="text-(--border-strong)">/</span>
-                    <Link
-                      href="/"
-                      className="underline underline-offset-4 decoration-(--border-strong) hover:text-(--text) transition-colors"
-                    >
-                      PORTFOLIO
-                    </Link>
+            <Reveal delay={40}>
+              <div className="border-b py-8 border-(--border)">
+                <div className="flex items-start gap-4">
+                  <div className="h-10 w-10 shrink-0 rounded-full border-2 border-(--text) bg-(--bg-2) flex items-center justify-center font-mono text-[13px] font-bold text-(--text)">
+                    P
+                  </div>
+                  <div>
+                    <h4 className="text-[14px] font-semibold tracking-[-0.01em] text-(--text)">
+                      Prakash Choudhary
+                    </h4>
+                    <p className="mt-1 font-mono text-[11px] text-(--text-2)">
+                      Senior Full-Stack Engineer
+                    </p>
+                    <p className="mt-2.5 max-w-[30ch] text-[13px] leading-[1.6] text-(--text-2)">
+                      Notes on distributed systems, design patterns, and full-stack software architecture with React, TypeScript, and Express.js.
+                    </p>
+                    <div className="mt-3 flex gap-2 font-mono text-[11px]">
+                      <a
+                        href="https://github.com/PrakashSinghChoudhary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4 decoration-(--border-strong) hover:text-(--text) transition-colors"
+                      >
+                        GITHUB
+                      </a>
+                      <span className="text-(--border-strong)">/</span>
+                      <Link
+                        href="/"
+                        className="underline underline-offset-4 decoration-(--border-strong) hover:text-(--text) transition-colors"
+                      >
+                        PORTFOLIO
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Topic Filter Pills */}
-            <div className="border-b py-8 border-(--border)">
-              <h4 className="text-[11px] font-semibold tracking-[0.12em] uppercase text-(--text-3)">
-                TOPICS
-              </h4>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {TOPICS.map((t) => (
-                  <button
-                    key={t.name}
-                    onClick={() => {
-                      setActiveTopic(t.name);
-                      document.getElementById("writing")?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                    }}
-                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-[6px] text-[12px] font-[450] tracking-[-0.01em] transition-all cursor-pointer ${activeTopic === t.name
-                      ? "bg-(--text) text-(--bg) border-(--text)"
-                      : "bg-(--bg) text-(--text-2) border-(--border) hover:border-(--border-strong) hover:text-(--text)"
-                      }`}
-                  >
-                    {t.name}
-                    <span
-                      className={`text-[10px] font-mono ${activeTopic === t.name
-                        ? "text-(--bg)/80"
-                        : "text-(--text-3)"
+            <Reveal delay={100}>
+              <div className="border-b py-8 border-(--border)">
+                <h4 className="text-[11px] font-semibold tracking-[0.12em] uppercase text-(--text-3)">
+                  TOPICS
+                </h4>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {TOPICS.map((t) => (
+                    <button
+                      key={t.name}
+                      onClick={() => {
+                        setActiveTopic(t.name);
+                        document.getElementById("writing")?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }}
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-[6px] text-[12px] font-[450] tracking-[-0.01em] transition-all cursor-pointer ${activeTopic === t.name
+                        ? "bg-(--text) text-(--bg) border-(--text)"
+                        : "bg-(--bg) text-(--text-2) border-(--border) hover:border-(--border-strong) hover:text-(--text)"
                         }`}
                     >
-                      {t.count}
-                    </span>
-                  </button>
-                ))}
-              </div>
-              {activeTopic !== "All" && (
-                <div className="mt-3 text-[11px] font-mono text-(--text-3)">
-                  Filtering by{" "}
-                  <span className="text-(--text) font-medium">{activeTopic}</span> —{" "}
-                  <button
-                    onClick={() => setActiveTopic("All")}
-                    className="underline underline-offset-4 hover:text-(--text) cursor-pointer"
-                  >
-                    show all
-                  </button>
+                      {t.name}
+                      <span
+                        className={`text-[10px] font-mono ${activeTopic === t.name
+                          ? "text-(--bg)/80"
+                          : "text-(--text-3)"
+                          }`}
+                      >
+                        {t.count}
+                      </span>
+                    </button>
+                  ))}
                 </div>
-              )}
-            </div>
-
+                {activeTopic !== "All" && (
+                  <div className="mt-3 text-[11px] font-mono text-(--text-3)">
+                    Filtering by{" "}
+                    <span className="text-(--text) font-medium">{activeTopic}</span> —{" "}
+                    <button
+                      onClick={() => setActiveTopic("All")}
+                      className="underline underline-offset-4 hover:text-(--text) cursor-pointer"
+                    >
+                      show all
+                    </button>
+                  </div>
+                )}
+              </div>
+            </Reveal>
 
             {/* Sidebar Latest Snippet */}
-            <div id="snippets" className="py-8">
-              <div className="flex items-center justify-between">
-                <h4 className="text-[11px] font-semibold tracking-[0.12em] uppercase text-(--text-3)">
-                  LATEST PATTERN SNIPPET
-                </h4>
-                <Link
-                  href="/blog/system-design/creational-patterns/factory-method"
-                  className="text-[10px] font-mono text-(--text-2) hover:text-(--text) hover:underline"
-                >
-                  Factory Method →
-                </Link>
+            <Reveal delay={160}>
+              <div id="snippets" className="py-8">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-[11px] font-semibold tracking-[0.12em] uppercase text-(--text-3)">
+                    LATEST PATTERN SNIPPET
+                  </h4>
+                  <Link
+                    href="/blog/system-design/creational-patterns/factory-method"
+                    className="text-[10px] font-mono text-(--text-2) hover:text-(--text) hover:underline"
+                  >
+                    Factory Method →
+                  </Link>
+                </div>
+                <CodeBlock
+                  filename="registry-factory.ts"
+                  langLabel="TypeScript"
+                  code={SIDEBAR_SNIPPET_CODE}
+                  className="mt-4 mb-0"
+                />
               </div>
-              <CodeBlock
-                filename="registry-factory.ts"
-                langLabel="TypeScript"
-                code={SIDEBAR_SNIPPET_CODE}
-                className="mt-4 mb-0"
-              />
-            </div>
+            </Reveal>
           </div>
         </aside>
       </div>

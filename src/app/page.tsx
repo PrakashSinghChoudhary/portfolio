@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Reveal from "@/components/Reveal";
 
 interface Project {
   id: string;
@@ -190,264 +191,286 @@ export default function Home() {
         <section className="border-b pb-16 pt-12 md:pb-24 md:pt-20 border-(--border)">
           <div className="max-w-4xl">
             {/* Minimalist Top Meta Badges */}
-            <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
-              <span className="inline-flex items-center gap-2 rounded-full border border-(--border-strong) bg-(--bg-2) px-3 py-1 text-(--text) font-medium">
-                <span className="h-1.5 w-1.5 rounded-full bg-(--text)" />
-                AVAILABLE FOR OPPORTUNITIES
-              </span>
-              <span className="hidden sm:inline text-(--border-strong)">/</span>
-              <span className="text-(--text-2)">7+ YEARS OF EXPERIENCE</span>
-              <span className="hidden sm:inline text-(--border-strong)">/</span>
-              <span className="text-(--text-3)">JAVASCRIPT • TYPESCRIPT • REACT • EXPRESS.JS</span>
-            </div>
+            <Reveal delay={40} duration={600}>
+              <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
+                <span className="inline-flex items-center gap-2 rounded-full border border-(--border-strong) bg-(--bg-2) px-3 py-1 text-(--text) font-medium">
+                  <span className="h-1.5 w-1.5 rounded-full bg-(--text)" />
+                  AVAILABLE FOR OPPORTUNITIES
+                </span>
+                <span className="hidden sm:inline text-(--border-strong)">/</span>
+                <span className="text-(--text-2)">7+ YEARS OF EXPERIENCE</span>
+                <span className="hidden sm:inline text-(--border-strong)">/</span>
+                <span className="text-(--text-3)">JAVASCRIPT • TYPESCRIPT • REACT • EXPRESS.JS</span>
+              </div>
+            </Reveal>
 
             {/* BIGGER AVATAR & NAME SECTION */}
-            <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
-              {/* Large Minimalist Avatar in Crisp Monochrome */}
-              <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40">
-                <div className="h-full w-full rounded-full p-1 border-2 border-(--border-strong) bg-(--bg-2) shadow-xs">
-                  <Image
-                    src="/Prakash Choudhary.JPG"
-                    alt="Prakash Choudhary"
-                    width={160}
-                    height={160}
-                    className="h-full w-full rounded-full object-cover object-[50%_25%]"
-                    priority
+            <Reveal delay={120} duration={650}>
+              <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+                {/* Large Minimalist Avatar in Crisp Monochrome */}
+                <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40">
+                  <div className="h-full w-full rounded-full p-1 border-2 border-(--border-strong) bg-(--bg-2) shadow-xs">
+                    <Image
+                      src="/Prakash Choudhary.JPG"
+                      alt="Prakash Choudhary"
+                      width={160}
+                      height={160}
+                      className="h-full w-full rounded-full object-cover object-[50%_25%]"
+                      priority
+                    />
+                  </div>
+                  <span
+                    className="absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-(--bg) bg-(--text)"
+                    title="Available for work"
                   />
                 </div>
-                <span
-                  className="absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-(--bg) bg-(--text)"
-                  title="Available for work"
-                />
-              </div>
 
-              {/* Big Name & Distinctive Subtitle */}
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-(--text-3) font-semibold">
-                  Senior Full-Stack Engineer
-                </span>
-                <h1 className="mt-1 text-[38px] sm:text-[52px] md:text-[64px] font-bold tracking-[-0.04em] leading-[1.05] text-(--text)">
-                  Prakash Choudhary
-                </h1>
-                <p className="mt-2 text-[15px] sm:text-[17px] text-(--text-2) font-mono">
-                  JavaScript • TypeScript • React • Express.js
-                </p>
+                {/* Big Name & Distinctive Subtitle */}
+                <div>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-(--text-3) font-semibold">
+                    Senior Full-Stack Engineer
+                  </span>
+                  <h1 className="mt-1 text-[38px] sm:text-[52px] md:text-[64px] font-bold tracking-[-0.04em] leading-[1.05] text-(--text)">
+                    Prakash Choudhary
+                  </h1>
+                  <p className="mt-2 text-[15px] sm:text-[17px] text-(--text-2) font-mono">
+                    JavaScript • TypeScript • React • Express.js
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Main Headline */}
-            <h2 className="mt-10 text-[32px] sm:text-[46px] md:text-[56px] lg:text-[62px] font-semibold leading-[1.1] tracking-[-0.03em] text-(--text)">
-              Crafting scalable web systems &amp; clean, resilient software.
-            </h2>
+            <Reveal delay={200} duration={700}>
+              <h2 className="mt-10 text-[32px] sm:text-[46px] md:text-[56px] lg:text-[62px] font-semibold leading-[1.1] tracking-[-0.03em] text-(--text)">
+                Crafting scalable web systems &amp; clean, resilient software.
+              </h2>
+            </Reveal>
 
             {/* Sub-headline */}
-            <p className="mt-6 max-w-[62ch] text-[17px] leading-[1.7] text-(--text-2) md:text-[19px]">
-              With over 7 years across production systems, I design and ship
-              applications that balance buttery-smooth frontend experiences in{" "}
-              <strong className="text-(--text) font-medium">React</strong> and{" "}
-              <strong className="text-(--text) font-medium">Next.js</strong> with
-              fault-tolerant, high-throughput backend services in{" "}
-              <strong className="text-(--text) font-medium">Express.js</strong> and{" "}
-              <strong className="text-(--text) font-medium">TypeScript</strong>.
-            </p>
+            <Reveal delay={280} duration={700}>
+              <p className="mt-6 max-w-[62ch] text-[17px] leading-[1.7] text-(--text-2) md:text-[19px]">
+                With over 7 years across production systems, I design and ship
+                applications that balance buttery-smooth frontend experiences in{" "}
+                <strong className="text-(--text) font-medium">React</strong> and{" "}
+                <strong className="text-(--text) font-medium">Next.js</strong> with
+                fault-tolerant, high-throughput backend services in{" "}
+                <strong className="text-(--text) font-medium">Express.js</strong> and{" "}
+                <strong className="text-(--text) font-medium">TypeScript</strong>.
+              </p>
+            </Reveal>
 
             {/* Minimalist CTA Buttons */}
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#projects"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-(--text) px-6 text-[13px] font-medium text-(--bg) transition-opacity hover:opacity-90"
-              >
-                View Selected Work ↓
-              </a>
-              <Link
-                href="/blog"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-6 text-[13px] font-medium text-(--text) hover:border-(--text) transition-colors"
-              >
-                Read Technical Blog →
-              </Link>
-              <a
-                href="https://github.com/PrakashSinghChoudhary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-mono text-(--text-2) hover:text-(--text) hover:border-(--border-strong) transition-colors"
-              >
-                GitHub ↗
-              </a>
-            </div>
+            <Reveal delay={360} duration={700}>
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#projects"
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-(--text) px-6 text-[13px] font-medium text-(--bg) transition-opacity hover:opacity-90"
+                >
+                  View Selected Work ↓
+                </a>
+                <Link
+                  href="/blog"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-6 text-[13px] font-medium text-(--text) hover:border-(--text) transition-colors"
+                >
+                  Read Technical Blog →
+                </Link>
+                <a
+                  href="https://github.com/PrakashSinghChoudhary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-mono text-(--text-2) hover:text-(--text) hover:border-(--border-strong) transition-colors"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </Reveal>
           </div>
 
           {/* Minimalist Metrics Grid */}
-          <div className="mt-16 grid grid-cols-2 gap-4 border-t pt-10 sm:grid-cols-4 border-(--border)">
-            <div className="border-l-2 border-(--text) pl-4">
-              <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
-                7+
+          <Reveal delay={440} duration={700}>
+            <div className="mt-16 grid grid-cols-2 gap-4 border-t pt-10 sm:grid-cols-4 border-(--border)">
+              <div className="border-l-2 border-(--text) pl-4">
+                <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
+                  7+
+                </div>
+                <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
+                  YEARS EXPERIENCE
+                </div>
               </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
-                YEARS EXPERIENCE
+              <div className="border-l-2 border-(--border-strong) pl-4">
+                <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
+                  React &amp; TS
+                </div>
+                <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
+                  PRIMARY SPECIALTY
+                </div>
+              </div>
+              <div className="border-l-2 border-(--border-strong) pl-4">
+                <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
+                  Express.js
+                </div>
+                <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
+                  API ARCHITECTURE
+                </div>
+              </div>
+              <div className="border-l-2 border-(--border-strong) pl-4">
+                <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
+                  99.9%
+                </div>
+                <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
+                  UPTIME MINDSET
+                </div>
               </div>
             </div>
-            <div className="border-l-2 border-(--border-strong) pl-4">
-              <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
-                React &amp; TS
-              </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
-                PRIMARY SPECIALTY
-              </div>
-            </div>
-            <div className="border-l-2 border-(--border-strong) pl-4">
-              <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
-                Express.js
-              </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
-                API ARCHITECTURE
-              </div>
-            </div>
-            <div className="border-l-2 border-(--border-strong) pl-4">
-              <div className="text-[30px] font-semibold tracking-tight text-(--text) md:text-[36px]">
-                99.9%
-              </div>
-              <div className="mt-1 font-mono text-[11px] tracking-[0.08em] text-(--text-3)">
-                UPTIME MINDSET
-              </div>
-            </div>
-          </div>
+          </Reveal>
         </section>
 
         {/* CORE CAPABILITIES & STACK */}
         <section className="border-b py-16 md:py-20 border-(--border)">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
-              <span className="font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold uppercase">
-                ENGINEERING PROFILE
-              </span>
-              <h2 className="mt-2 text-[26px] font-semibold tracking-[-0.03em] md:text-[34px]">
-                Technical Capabilities
-              </h2>
+          <Reveal delay={0}>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <span className="font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold uppercase">
+                  ENGINEERING PROFILE
+                </span>
+                <h2 className="mt-2 text-[26px] font-semibold tracking-[-0.03em] md:text-[34px]">
+                  Technical Capabilities
+                </h2>
+              </div>
+              <p className="max-w-md text-[14px] leading-relaxed text-(--text-2)">
+                From designing high-throughput API gateways and distributed queue pipelines to architecting resilient React design systems.
+              </p>
             </div>
-            <p className="max-w-md text-[14px] leading-relaxed text-(--text-2)">
-              From designing high-throughput API gateways and distributed queue pipelines to architecting resilient React design systems.
-            </p>
-          </div>
+          </Reveal>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {/* Frontend */}
-            <div className="tech-pill rounded-xl p-6 flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
-                  01 / INTERFACE
-                </span>
-                <h3 className="text-[17px] font-semibold tracking-tight mt-1">
-                  Frontend Architecture
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed opacity-70">
-                  Component systems, state machines, server components, and responsive design systems with performance-first principles.
-                </p>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
-                {["React 19", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "State Architecture"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
-                  >
-                    {item}
+            <Reveal delay={60} className="flex flex-col h-full">
+              <div className="tech-pill rounded-xl p-6 flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
+                    01 / INTERFACE
                   </span>
-                ))}
+                  <h3 className="text-[17px] font-semibold tracking-tight mt-1">
+                    Frontend Architecture
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-relaxed opacity-70">
+                    Component systems, state machines, server components, and responsive design systems with performance-first principles.
+                  </p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
+                  {["React 19", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "State Architecture"].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Backend */}
-            <div className="tech-pill rounded-xl p-6 flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
-                  02 / SERVICES
-                </span>
-                <h3 className="text-[17px] font-semibold tracking-tight mt-1">
-                  Backend APIs &amp; Microservices
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed opacity-70">
-                  High-concurrency microservices, JWT/RBAC security, streaming WebSockets, and resilient API reverse proxies.
-                </p>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
-                {["Express.js", "Node.js", "RESTful APIs", "WebSockets", "Auth & JWT", "Rate Limiting"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
-                  >
-                    {item}
+            <Reveal delay={140} className="flex flex-col h-full">
+              <div className="tech-pill rounded-xl p-6 flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
+                    02 / SERVICES
                   </span>
-                ))}
+                  <h3 className="text-[17px] font-semibold tracking-tight mt-1">
+                    Backend APIs &amp; Microservices
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-relaxed opacity-70">
+                    High-concurrency microservices, JWT/RBAC security, streaming WebSockets, and resilient API reverse proxies.
+                  </p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
+                  {["Express.js", "Node.js", "RESTful APIs", "WebSockets", "Auth & JWT", "Rate Limiting"].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Infrastructure */}
-            <div className="tech-pill rounded-xl p-6 flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
-                  03 / INFRASTRUCTURE
-                </span>
-                <h3 className="text-[17px] font-semibold tracking-tight mt-1">
-                  Databases &amp; Distributed Systems
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed opacity-70">
-                  Data modeling, indexing, Redis caching, Docker containerization, and AWS infrastructure engineering.
-                </p>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
-                {["PostgreSQL", "MongoDB", "Redis Caching", "Docker", "AWS (EC2, S3)", "Load Balancing"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
-                  >
-                    {item}
+            <Reveal delay={220} className="flex flex-col h-full">
+              <div className="tech-pill rounded-xl p-6 flex flex-col justify-between h-full">
+                <div>
+                  <span className="font-mono text-[11px] opacity-60 font-medium tracking-wider">
+                    03 / INFRASTRUCTURE
                   </span>
-                ))}
+                  <h3 className="text-[17px] font-semibold tracking-tight mt-1">
+                    Databases &amp; Distributed Systems
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-relaxed opacity-70">
+                    Data modeling, indexing, Redis caching, Docker containerization, and AWS infrastructure engineering.
+                  </p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-1.5 border-t pt-4 border-current/15">
+                  {["PostgreSQL", "MongoDB", "Redis Caching", "Docker", "AWS (EC2, S3)", "Load Balancing"].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md border px-2.5 py-1 font-mono text-[11px] border-current/20 bg-current/5"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* PORTFOLIO / SELECTED PROJECTS */}
         <section id="projects" className="scroll-mt-20 border-b py-16 md:py-24 border-(--border)">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold">
-                <span>PORTFOLIO</span>
-                <span>/</span>
-                <span>SELECTED WORK</span>
+          <Reveal delay={0}>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              <div>
+                <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold">
+                  <span>PORTFOLIO</span>
+                  <span>/</span>
+                  <span>SELECTED WORK</span>
+                </div>
+                <h2 className="mt-2 text-[30px] font-semibold tracking-[-0.03em] md:text-[40px]">
+                  Featured Projects
+                </h2>
+                <p className="mt-2 text-[15px] text-(--text-2) max-w-[50ch]">
+                  Production web applications, cross-platform mobile tools, and backend concurrency systems built with Go, React 19, and TypeScript.
+                </p>
               </div>
-              <h2 className="mt-2 text-[30px] font-semibold tracking-[-0.03em] md:text-[40px]">
-                Featured Projects
-              </h2>
-              <p className="mt-2 text-[15px] text-(--text-2) max-w-[50ch]">
-                Production web applications, cross-platform mobile tools, and backend concurrency systems built with Go, React 19, and TypeScript.
-              </p>
-            </div>
 
-            {/* Minimalist Filter Pills */}
-            <div className="flex flex-wrap gap-2">
-              {["All", "Frontend", "Mobile", "Backend"].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`rounded-full border px-3.5 py-1.5 font-mono text-[11px] transition-colors cursor-pointer ${selectedCategory === cat
-                    ? "bg-(--text) text-(--bg) border-(--text)"
-                    : "bg-(--bg) text-(--text-2) border-(--border) hover:text-(--text) hover:border-(--border-strong)"
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
+              {/* Minimalist Filter Pills */}
+              <div className="flex flex-wrap gap-2">
+                {["All", "Frontend", "Mobile", "Backend"].map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[11px] transition-colors cursor-pointer ${selectedCategory === cat
+                      ? "bg-(--text) text-(--bg) border-(--text)"
+                      : "bg-(--bg) text-(--text-2) border-(--border) hover:text-(--text) hover:border-(--border-strong)"
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Project Cards */}
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group rounded-2xl border bg-(--bg) p-6 transition-all hover:border-(--text) shadow-xs flex flex-col justify-between border-(--border)"
-              >
+            {filteredProjects.map((project, idx) => (
+              <Reveal key={project.id} delay={idx * 80} className="flex flex-col h-full">
+                <div
+                  className="group rounded-2xl border bg-(--bg) p-6 transition-all hover:border-(--text) shadow-xs flex flex-col justify-between border-(--border) h-full"
+                >
                 <div>
                   {/* Visual Media Preview Banner */}
                   <a
@@ -654,157 +677,165 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            ))}
+            </Reveal>
+          ))}
           </div>
         </section>
 
         {/* TECHNICAL WRITING / BLOG SECTION */}
         <section className="border-b py-16 md:py-24 border-(--border)">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold">
-                <span>TECHNICAL WRITING</span>
-                <span>/</span>
-                <span>NOTES &amp; ESSAYS</span>
+          <Reveal delay={0}>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold">
+                  <span>TECHNICAL WRITING</span>
+                  <span>/</span>
+                  <span>NOTES &amp; ESSAYS</span>
+                </div>
+                <h2 className="mt-2 text-[30px] font-semibold tracking-[-0.03em] md:text-[40px]">
+                  System Design &amp; Architecture Notes
+                </h2>
+                <p className="mt-2 text-[15px] text-(--text-2) max-w-[52ch]">
+                  In-depth technical breakdowns of distributed systems, design patterns, and full-stack software architecture.
+                </p>
               </div>
-              <h2 className="mt-2 text-[30px] font-semibold tracking-[-0.03em] md:text-[40px]">
-                System Design &amp; Architecture Notes
-              </h2>
-              <p className="mt-2 text-[15px] text-(--text-2) max-w-[52ch]">
-                In-depth technical breakdowns of distributed systems, design patterns, and full-stack software architecture.
-              </p>
+              <Link
+                href="/blog"
+                className="font-mono text-[12px] text-(--text) hover:underline underline-offset-4 transition-colors flex items-center gap-1"
+              >
+                Browse all articles →
+              </Link>
             </div>
-            <Link
-              href="/blog"
-              className="font-mono text-[12px] text-(--text) hover:underline underline-offset-4 transition-colors flex items-center gap-1"
-            >
-              Browse all articles →
-            </Link>
-          </div>
+          </Reveal>
 
           {/* Minimalist Category Quick Links */}
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <Link
-              href="/blog/system-design/general/load-balancer"
-              className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
-            >
-              <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
-              <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Networking &amp; Scale</div>
-            </Link>
-            <Link
-              href="/blog/system-design/database/cap-theorem"
-              className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
-            >
-              <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
-              <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Distributed Databases</div>
-            </Link>
-            <Link
-              href="/blog/system-design/creational-patterns/singleton"
-              className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
-            >
-              <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
-              <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Design Patterns</div>
-            </Link>
-            <Link
-              href="/blog/system-design/object-oriented-programming/introduction-to-object-oriented-programming"
-              className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
-            >
-              <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
-              <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Object-Oriented Design</div>
-            </Link>
-          </div>
+          <Reveal delay={60}>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <Link
+                href="/blog/system-design/general/load-balancer"
+                className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
+              >
+                <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
+                <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Networking &amp; Scale</div>
+              </Link>
+              <Link
+                href="/blog/system-design/database/cap-theorem"
+                className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
+              >
+                <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
+                <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Distributed Databases</div>
+              </Link>
+              <Link
+                href="/blog/system-design/creational-patterns/singleton"
+                className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
+              >
+                <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
+                <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Design Patterns</div>
+              </Link>
+              <Link
+                href="/blog/system-design/object-oriented-programming/introduction-to-object-oriented-programming"
+                className="group rounded-lg border bg-(--bg-2) p-3 text-left border-(--border) hover:border-(--text) transition-colors"
+              >
+                <div className="font-mono text-[10px] text-(--text-3) group-hover:text-(--text) transition-colors">CATEGORY</div>
+                <div className="text-[13px] font-semibold mt-0.5 text-(--text)">Object-Oriented Design</div>
+              </Link>
+            </div>
+          </Reveal>
 
           {/* Article List */}
           <div className="mt-10 divide-y border-y border-(--border)">
-            {ARTICLES.map((article) => (
-              <Link
-                key={article.href}
-                href={article.href}
-                className="group flex flex-col justify-between py-6 transition-colors hover:bg-(--bg-2)/60 sm:flex-row sm:items-baseline sm:gap-6 -mx-3 px-3 rounded-lg"
-              >
-                <div className="max-w-2xl">
-                  <div className="flex items-center gap-2.5 font-mono text-[11px] text-(--text-3)">
-                    <span className="text-(--text-2)">{article.category}</span>
-                    <span>•</span>
-                    <span>{article.readTime}</span>
+            {ARTICLES.map((article, idx) => (
+              <Reveal key={article.href} delay={idx * 40}>
+                <Link
+                  href={article.href}
+                  className="group flex flex-col justify-between py-6 transition-colors hover:bg-(--bg-2)/60 sm:flex-row sm:items-baseline sm:gap-6 -mx-3 px-3 rounded-lg"
+                >
+                  <div className="max-w-2xl">
+                    <div className="flex items-center gap-2.5 font-mono text-[11px] text-(--text-3)">
+                      <span className="text-(--text-2)">{article.category}</span>
+                      <span>•</span>
+                      <span>{article.readTime}</span>
+                    </div>
+                    <h3 className="mt-1.5 text-[18px] font-semibold tracking-[-0.01em] text-(--text) group-hover:underline underline-offset-4 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-(--text-2)">
+                      {article.description}
+                    </p>
                   </div>
-                  <h3 className="mt-1.5 text-[18px] font-semibold tracking-[-0.01em] text-(--text) group-hover:underline underline-offset-4 transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-(--text-2)">
-                    {article.description}
-                  </p>
-                </div>
-                <div className="mt-4 flex items-center gap-1 font-mono text-[11px] text-(--text-3) sm:mt-0 shrink-0 group-hover:text-(--text) transition-colors">
-                  <span>{article.date}</span>
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
-                </div>
-              </Link>
+                  <div className="mt-4 flex items-center gap-1 font-mono text-[11px] text-(--text-3) sm:mt-0 shrink-0 group-hover:text-(--text) transition-colors">
+                    <span>{article.date}</span>
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </section>
 
         {/* MINIMALIST LET'S CONNECT / CTA SECTION */}
         <section className="py-16 md:py-24">
-          <div className="rounded-2xl border bg-(--bg-2) p-8 md:p-12 border-(--border) flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="max-w-xl">
-              <span className="font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold uppercase">
-                COLLABORATION &amp; INQUIRIES
-              </span>
-              <h2 className="mt-2 text-[26px] font-semibold tracking-[-0.03em] md:text-[34px] text-(--text)">
-                Building something ambitious? Let&apos;s talk.
-              </h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-(--text-2)">
-                With 7+ years of hands-on experience across React, TypeScript, and Express.js backends,
-                I help teams take ambitious software from concept to production-grade reliability.
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-2 font-mono text-[13px]">
-                <span className="text-(--text-3)">Email:</span>
+          <Reveal delay={0}>
+            <div className="rounded-2xl border bg-(--bg-2) p-8 md:p-12 border-(--border) flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+              <div className="max-w-xl">
+                <span className="font-mono text-[11px] tracking-[0.14em] text-(--text-3) font-semibold uppercase">
+                  COLLABORATION &amp; INQUIRIES
+                </span>
+                <h2 className="mt-2 text-[26px] font-semibold tracking-[-0.03em] md:text-[34px] text-(--text)">
+                  Building something ambitious? Let&apos;s talk.
+                </h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-(--text-2)">
+                  With 7+ years of hands-on experience across React, TypeScript, and Express.js backends,
+                  I help teams take ambitious software from concept to production-grade reliability.
+                </p>
+                <div className="mt-5 flex flex-wrap items-center gap-2 font-mono text-[13px]">
+                  <span className="text-(--text-3)">Email:</span>
+                  <a
+                    href="mailto:singhprakashchoudhary@gmail.com"
+                    className="font-medium text-(--text) underline decoration-(--border-strong) underline-offset-4 hover:decoration-(--text) transition-colors"
+                  >
+                    singhprakashchoudhary@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
                 <a
                   href="mailto:singhprakashchoudhary@gmail.com"
-                  className="font-medium text-(--text) underline decoration-(--border-strong) underline-offset-4 hover:decoration-(--text) transition-colors"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-(--text) px-6 text-[13px] font-medium text-(--bg) transition-opacity hover:opacity-90 text-center"
                 >
-                  singhprakashchoudhary@gmail.com
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>Email Me</span>
                 </a>
+                <a
+                  href="https://github.com/PrakashSinghChoudhary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-medium text-(--text) hover:border-(--border-strong) transition-colors text-center"
+                >
+                  GitHub Profile ↗
+                </a>
+                <Link
+                  href="/about"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-medium text-(--text) hover:border-(--border-strong) transition-colors text-center"
+                >
+                  About Me
+                </Link>
               </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-              <a
-                href="mailto:singhprakashchoudhary@gmail.com"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-(--text) px-6 text-[13px] font-medium text-(--bg) transition-opacity hover:opacity-90 text-center"
-              >
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <span>Email Me</span>
-              </a>
-              <a
-                href="https://github.com/PrakashSinghChoudhary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-medium text-(--text) hover:border-(--border-strong) transition-colors text-center"
-              >
-                GitHub Profile ↗
-              </a>
-              <Link
-                href="/about"
-                className="inline-flex h-11 items-center justify-center rounded-full border border-(--border) bg-(--bg) px-5 text-[13px] font-medium text-(--text) hover:border-(--border-strong) transition-colors text-center"
-              >
-                About Me
-              </Link>
-            </div>
-          </div>
+          </Reveal>
         </section>
       </div>
     </main>

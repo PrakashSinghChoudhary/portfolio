@@ -1,6 +1,7 @@
 import Link from "next/link";
 import LeftArrow from "./LeftArrow";
 import { Fragment } from "react/jsx-runtime";
+import Reveal from "./Reveal";
 
 export interface BreadcrumbItem {
   link: string;
@@ -13,7 +14,7 @@ export interface BreadcrumbProps {
 
 export default function Breadcrumb({ data }: BreadcrumbProps) {
   return (
-    <>
+    <Reveal delay={20}>
       <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono tracking-[0.08em] text-(--text-3)">
         {data.map((d: BreadcrumbItem) =>
           d.link === "" ? (
@@ -38,6 +39,6 @@ export default function Breadcrumb({ data }: BreadcrumbProps) {
           ),
         )}
       </div>
-    </>
+    </Reveal>
   );
 }

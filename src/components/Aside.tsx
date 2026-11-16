@@ -1,4 +1,5 @@
 import { TableOfContent } from "@/types/TableOfContent";
+import Reveal from "./Reveal";
 
 export interface AsideProps {
   tableOfContent: TableOfContent[];
@@ -12,7 +13,8 @@ export default function Aside({
 }: AsideProps) {
   return (
     <aside className="col-span-12 lg:col-span-4 lg:pl-10 pb-12 lg:pb-0 order-first lg:order-last">
-      <div className="lg:sticky lg:top-21 border-b lg:border-b-0 pb-6 lg:pb-0 border-(--border)">
+      <Reveal delay={120} className="h-full">
+        <div className="lg:sticky lg:top-21 border-b lg:border-b-0 pb-6 lg:pb-0 border-(--border)">
         <div className="hidden lg:block">
           <h4 className="text-[11px] font-semibold tracking-[0.12em] text-(--text-3) mt-4">
             ON THIS PAGE
@@ -95,6 +97,7 @@ export default function Aside({
           </div>
         </div>
       </div>
+    </Reveal>
     </aside>
   );
 }

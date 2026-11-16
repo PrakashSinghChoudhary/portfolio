@@ -18,10 +18,8 @@ import {
 import Breadcrumb from "@/components/Breadcrumb";
 import ArticleMeta from "@/components/ArticleMeta";
 import Checklist from "@/components/Checklist";
-import NumberedList from "@/components/NumberedList";
 import Image from "next/image";
 import Blockquote from "@/components/Blockquote";
-import Code from "@/components/Code";
 import Note from "@/components/Note";
 import Callout from "@/components/Callout";
 
@@ -129,7 +127,7 @@ export default function CAPTheoremPage() {
             time, no matter which node they connect to. For this to happen,
             whenever data is written to one node, it must be instantly forwarded
             or replicated to all the other nodes in the system before the write
-            is deemed "successful".
+            is deemed &quot;successful&quot;.
           </p>
           <BulletList
             title="Every read receives the most recent write or an error. There is no
@@ -140,7 +138,7 @@ export default function CAPTheoremPage() {
                 time. It behaves like there is a single copy.
               </>,
               <>
-                If a write succeeds on one node but hasn't replicated, other
+                If a write succeeds on one node but hasn&apos;t replicated, other
                 nodes must block or error, not return old data.
               </>,
               <>
@@ -173,7 +171,7 @@ export default function CAPTheoremPage() {
             list={[
               <>
                 The system stays up for reads and writes. No request ends with
-                "try again later" because of a partition.
+                &quot;try again later&quot; because of a partition.
               </>,
               <>
                 During a network split, nodes on both sides keep serving from
@@ -212,7 +210,7 @@ export default function CAPTheoremPage() {
                 cable cut, switch failure, region isolation.
               </>,
               <>
-                You don't get to choose P in the real world. Partitions will
+                You don&apos;t get to choose P in the real world. Partitions will
                 happen, so your system must handle them.
               </>,
               <>
@@ -220,8 +218,8 @@ export default function CAPTheoremPage() {
                 block (CP) or stay available and serve stale data (AP).
               </>,
               <>
-                This is why CAP is really "on a partition, C or A?" - not "pick
-                2 of 3 forever".
+                This is why CAP is really &quot;on a partition, C or A?&quot; - not &quot;pick
+                2 of 3 forever&quot;.
               </>,
             ]}
           />
@@ -231,7 +229,7 @@ export default function CAPTheoremPage() {
             and Availability?
           </p>
           <p className="content">
-            To understand this, let's first understand what a network partition
+            To understand this, let&apos;s first understand what a network partition
             actually means.
           </p>
           <p className="content">
@@ -263,17 +261,17 @@ export default function CAPTheoremPage() {
             is called a <strong>Network Partition</strong>.
           </p>
           <p className="content">
-            Why can't we simply choose Partition Tolerance?
+            Why can&apos;t we simply choose Partition Tolerance?
           </p>
           <p className="content">
-            Here's something important to understand: you don't really get to
+            Here&apos;s something important to understand: you don&apos;t really get to
             choose whether network partitions happen. In a distributed system,
             network failures are inevitable. Servers can crash, cables can get
             disconnected, network routes can fail, and entire data centers can
             become unreachable. You can build systems that reduce the likelihood
             of these failures, but you cannot guarantee that they will never
             happen. Therefore, a distributed system must be designed to tolerate
-            network partitions. The real question isn't whether you want
+            network partitions. The real question isn&apos;t whether you want
             Partition Tolerance. The real question is:
           </p>
           <p className="content">
@@ -347,16 +345,16 @@ export default function CAPTheoremPage() {
             list={[
               <>
                 <strong>Option C — Be consistent and slow:</strong> Client
-                writes something to to Database A. Database A says "wait, let me
-                make sure Database B also got it before I tell the client it's
-                done." It does a round-trip to Pune, waits for an ack, then
+                writes something to to Database A. Database A says &quot;wait, let me
+                make sure Database B also got it before I tell the client it&apos;s
+                done.&quot; It does a round-trip to Pune, waits for an ack, then
                 replies. Latency is higher, maybe 50ms instead of 5ms, but any
                 subsequent read from Database B will see latest write.
               </>,
               <>
                 <strong>Option L — Be fast and eventually consistent: </strong>
                 Client writes to Database A. Database A writes locally and
-                immediately tells the client "done". It replicates to Database B
+                immediately tells the client &quot;done&quot;. It replicates to Database B
                 in the background. Latency is very low. But for the next few
                 milliseconds, a read from Database B will still return stale
                 data.

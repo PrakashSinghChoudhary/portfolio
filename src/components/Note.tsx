@@ -1,5 +1,3 @@
-import Code from "./Code";
-
 export interface NoteProps {
   note: string;
 }
