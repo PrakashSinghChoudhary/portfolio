@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0b5" />
+      <stop offset="100%" stop-color="#e2b192" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="128" cy="128" r="128" fill="url(#avatarBg)" />
+
+  <!-- Subtle grid/accent ring -->
+  <circle cx="128" cy="128" r="124" fill="none" stroke="#27272a" stroke-width="1.5" />
+
+  <!-- Body / Minimalist Black Turtleneck -->
+  <path d="M42 256 C42 190, 78 170, 128 170 C178 170, 214 190, 214 256 Z" fill="#18181b" />
+  <path d="M42 256 C42 190, 78 170, 128 170 C178 170, 214 190, 214 256 Z" fill="none" stroke="#27272a" stroke-width="2" />
+
+  <!-- High Collar -->
+  <rect x="106" y="148" width="44" height="26" rx="4" fill="#27272a" />
+
+  <!-- Neck -->
+  <rect x="112" y="138" width="32" height="24" rx="4" fill="url(#skin)" />
+
+  <!-- Head -->
+  <ellipse cx="128" cy="104" rx="44" ry="50" fill="url(#skin)" />
+
+  <!-- Hair / Sharp Minimalist Cut -->
+  <path d="M84 92 C82 50, 102 36, 128 36 C154 36, 174 50, 172 92 C172 72, 158 52, 128 52 C98 52, 84 72, 84 92 Z" fill="#18181b" />
+  <path d="M80 100 C80 64, 96 44, 128 42 C160 44, 176 64, 176 100 C174 76, 158 56, 128 56 C98 56, 82 76, 80 100 Z" fill="#09090b" />
+
+  <!-- Minimalist Glasses -->
+  <rect x="96" y="94" width="28" height="19" rx="4" fill="#18181b" stroke="#71717a" stroke-width="2.5" />
+  <rect x="132" y="94" width="28" height="19" rx="4" fill="#18181b" stroke="#71717a" stroke-width="2.5" />
+  <line x1="124" y1="103" x2="132" y2="103" stroke="#71717a" stroke-width="2.5" />
+
+  <!-- Eyes behind glasses -->
+  <circle cx="110" cy="103.5" r="2.5" fill="#fafafa" />
+  <circle cx="146" cy="103.5" r="2.5" fill="#fafafa" />
+
+  <!-- Subtle Smile -->
+  <path d="M117 128 Q128 135 139 128" fill="none" stroke="#27272a" stroke-width="2.5" stroke-linecap="round" />
+</svg>
