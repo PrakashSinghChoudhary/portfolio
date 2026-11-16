@@ -211,7 +211,7 @@ export default function Home() {
                 <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40">
                   <div className="h-full w-full rounded-full p-1 border-2 border-(--border-strong) bg-(--bg-2) shadow-xs">
                     <Image
-                      src="/Prakash Choudhary.JPG"
+                      src="/Prakash Choudhary.original.JPG"
                       alt="Prakash Choudhary"
                       width={160}
                       height={160}
@@ -471,214 +471,214 @@ export default function Home() {
                 <div
                   className="group rounded-2xl border bg-(--bg) p-6 transition-all hover:border-(--text) shadow-xs flex flex-col justify-between border-(--border) h-full"
                 >
-                <div>
-                  {/* Visual Media Preview Banner */}
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/preview relative block overflow-hidden rounded-xl border bg-(--bg-2) border-(--border) transition-all hover:border-(--border-strong)"
-                  >
-                    {/* Window Bar */}
-                    <div className="flex items-center justify-between border-b px-4 py-2.5 border-(--border) bg-(--bg)/70 backdrop-blur-xs">
-                      <div className="flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
-                        <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
-                        <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
-                      </div>
-                      <span className="font-mono text-[10px] text-(--text-3)">
-                        {project.displayUrl}
-                      </span>
-                      <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded border border-(--border-strong) bg-(--bg) text-(--text-2)">
-                        {project.badge}
-                      </span>
-                    </div>
-
-                    {/* Media Container */}
-                    <div className="relative h-[240px] sm:h-[270px] w-full overflow-hidden bg-(--bg-2) flex items-center justify-center p-3">
-                      {project.previewType === "web" ? (
-                        <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-black">
-                          {project.image && (
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              unoptimized
-                              className="object-cover object-top transition-transform duration-500 group-hover/preview:scale-[1.02]"
-                            />
-                          )}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-end p-3">
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 font-mono text-[10px] font-semibold text-black shadow-md">
-                              Play Live Game ↗
-                            </span>
-                          </div>
-                        </div>
-                      ) : project.previewType === "mobile" ? (
-                        <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-(--bg) flex items-center justify-center gap-3 sm:gap-4 p-2">
-                          {/* Left Phone: Reminders & Countdown Timer */}
-                          {project.image && (
-                            <div className="relative h-[200px] sm:h-[230px] w-[95px] sm:w-[105px] shrink-0 rounded-2xl border-2 border-(--text) bg-black shadow-lg overflow-hidden transition-transform duration-500 group-hover/preview:-translate-y-1">
-                              <Image
-                                src={project.image}
-                                alt="Docket Active Timer Screen"
-                                fill
-                                className="object-cover object-top"
-                              />
-                            </div>
-                          )}
-
-                          {/* Right Phone: Daily Tasks & Calendar */}
-                          {project.secondaryImage && (
-                            <div className="relative h-[200px] sm:h-[230px] w-[95px] sm:w-[105px] shrink-0 rounded-2xl border-2 border-(--border-strong) bg-black shadow-md overflow-hidden transition-transform duration-500 group-hover/preview:translate-y-1">
-                              <Image
-                                src={project.secondaryImage}
-                                alt="Docket Daily Tasks Screen"
-                                fill
-                                className="object-cover object-top"
-                              />
-                            </div>
-                          )}
-
-                          {/* App Icon Pill Badge */}
-                          {project.icon && (
-                            <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 rounded-full border border-(--border) bg-(--bg)/90 px-2 py-0.5 backdrop-blur-md shadow-xs">
-                              <Image
-                                src={project.icon}
-                                alt="Docket App Icon"
-                                width={14}
-                                height={14}
-                                className="rounded-xs"
-                              />
-                              <span className="font-mono text-[9px] text-(--text-2) font-medium">
-                                Expo SDK 58
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        /* Terminal / Go Concurrency Preview */
-                        <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-(--bg) p-3 text-left font-mono text-[10.5px] leading-[1.6] flex flex-col justify-between shadow-xs">
-                          {/* Code Header Bar */}
-                          <div className="flex items-center justify-between border-b pb-1.5 text-[10px] border-(--border) text-(--text-3)">
-                            <span className="text-(--text-2) font-medium truncate max-w-[190px]">
-                              11. Goroutines / channels.go
-                            </span>
-                            <span className="rounded border px-1.5 py-0.2 text-[9px] font-semibold border-(--border-strong) bg-(--bg-2) text-(--text)">
-                              Go 1.24
-                            </span>
-                          </div>
-
-                          {/* Code Block Snippet */}
-                          <div className="py-1.5 space-y-0.5 text-[10px] sm:text-[11px] overflow-hidden text-(--text-2)">
-                            <div>
-                              <span className="text-(--text-3)">package</span>{" "}
-                              <span className="text-(--text) font-semibold">main</span>
-                            </div>
-                            <div>
-                              <span className="text-(--text-3)">func</span>{" "}
-                              <span className="text-(--text) font-semibold">prepareDrink</span>(ch{" "}
-                              <span className="text-(--text-3)">chan</span> string) &#123;
-                            </div>
-                            <div className="pl-3.5 text-(--text-3)">
-                              ch &lt;- &quot;Latte ready&quot;
-                            </div>
-                            <div>&#125;</div>
-                            <div className="pt-0.5">
-                              <span className="text-(--text-3)">func</span>{" "}
-                              <span className="text-(--text) font-semibold">main</span>() &#123;
-                            </div>
-                            <div className="pl-3.5">
-                              ch := <span className="text-(--text-3)">make</span>(
-                              <span className="text-(--text-3)">chan</span> string)
-                            </div>
-                            <div className="pl-3.5 text-(--text)">
-                              <span className="text-(--text-3)">go</span> prepareDrink(ch)
-                            </div>
-                            <div className="pl-3.5">
-                              order := &lt;-ch
-                            </div>
-                            <div>&#125;</div>
-                          </div>
-
-                          {/* Bottom Chapter Bar */}
-                          <div className="border-t pt-1.5 flex items-center justify-between text-[9.5px] border-(--border) text-(--text-3)">
-                            <span>11 Chapters • 40+ Labs</span>
-                            <span className="text-(--text) group-hover/preview:underline font-medium">
-                              Inspect Code ↗
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </a>
-
-                  {/* Project Title with Linkable Link */}
-                  <div className="mt-6 flex items-start justify-between gap-4">
-                    <div>
-                      <span className="font-mono text-[10px] uppercase tracking-wider text-(--text-3)">
-                        {project.category}
-                      </span>
-                      <h3 className="text-[20px] font-semibold tracking-tight text-(--text) mt-0.5">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1.5"
-                        >
-                          {project.title}
-                          <span className="text-[13px] text-(--text-3) transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-(--text)">
-                            ↗
-                          </span>
-                        </a>
-                      </h3>
-                      <p className="mt-1 text-[13px] font-medium text-(--text-2)">
-                        {project.tagline}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="mt-4 text-[14px] leading-relaxed text-(--text-2)">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Footer with Minimalist Tags & Actions */}
-                <div className="mt-6 border-t pt-5 border-(--border)">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md border bg-(--bg-2) px-2.5 py-0.5 font-mono text-[10px] text-(--text-2) border-(--border)"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 flex items-center gap-4">
+                  <div>
+                    {/* Visual Media Preview Banner */}
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-[11px] text-(--text) hover:underline underline-offset-4 flex items-center gap-1 font-medium"
+                      className="group/preview relative block overflow-hidden rounded-xl border bg-(--bg-2) border-(--border) transition-all hover:border-(--border-strong)"
                     >
-                      {project.ctaText ?? "View Live Project ↗"}
+                      {/* Window Bar */}
+                      <div className="flex items-center justify-between border-b px-4 py-2.5 border-(--border) bg-(--bg)/70 backdrop-blur-xs">
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
+                          <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
+                          <span className="h-2 w-2 rounded-full bg-(--border-strong)" />
+                        </div>
+                        <span className="font-mono text-[10px] text-(--text-3)">
+                          {project.displayUrl}
+                        </span>
+                        <span className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded border border-(--border-strong) bg-(--bg) text-(--text-2)">
+                          {project.badge}
+                        </span>
+                      </div>
+
+                      {/* Media Container */}
+                      <div className="relative h-[240px] sm:h-[270px] w-full overflow-hidden bg-(--bg-2) flex items-center justify-center p-3">
+                        {project.previewType === "web" ? (
+                          <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-black">
+                            {project.image && (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                unoptimized
+                                className="object-cover object-top transition-transform duration-500 group-hover/preview:scale-[1.02]"
+                              />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-end p-3">
+                              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 font-mono text-[10px] font-semibold text-black shadow-md">
+                                Play Live Game ↗
+                              </span>
+                            </div>
+                          </div>
+                        ) : project.previewType === "mobile" ? (
+                          <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-(--bg) flex items-center justify-center gap-3 sm:gap-4 p-2">
+                            {/* Left Phone: Reminders & Countdown Timer */}
+                            {project.image && (
+                              <div className="relative h-[200px] sm:h-[230px] w-[95px] sm:w-[105px] shrink-0 rounded-2xl border-2 border-(--text) bg-black shadow-lg overflow-hidden transition-transform duration-500 group-hover/preview:-translate-y-1">
+                                <Image
+                                  src={project.image}
+                                  alt="Docket Active Timer Screen"
+                                  fill
+                                  className="object-cover object-top"
+                                />
+                              </div>
+                            )}
+
+                            {/* Right Phone: Daily Tasks & Calendar */}
+                            {project.secondaryImage && (
+                              <div className="relative h-[200px] sm:h-[230px] w-[95px] sm:w-[105px] shrink-0 rounded-2xl border-2 border-(--border-strong) bg-black shadow-md overflow-hidden transition-transform duration-500 group-hover/preview:translate-y-1">
+                                <Image
+                                  src={project.secondaryImage}
+                                  alt="Docket Daily Tasks Screen"
+                                  fill
+                                  className="object-cover object-top"
+                                />
+                              </div>
+                            )}
+
+                            {/* App Icon Pill Badge */}
+                            {project.icon && (
+                              <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 rounded-full border border-(--border) bg-(--bg)/90 px-2 py-0.5 backdrop-blur-md shadow-xs">
+                                <Image
+                                  src={project.icon}
+                                  alt="Docket App Icon"
+                                  width={14}
+                                  height={14}
+                                  className="rounded-xs"
+                                />
+                                <span className="font-mono text-[9px] text-(--text-2) font-medium">
+                                  Expo SDK 58
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          /* Terminal / Go Concurrency Preview */
+                          <div className="relative h-full w-full overflow-hidden rounded-lg border border-(--border) bg-(--bg) p-3 text-left font-mono text-[10.5px] leading-[1.6] flex flex-col justify-between shadow-xs">
+                            {/* Code Header Bar */}
+                            <div className="flex items-center justify-between border-b pb-1.5 text-[10px] border-(--border) text-(--text-3)">
+                              <span className="text-(--text-2) font-medium truncate max-w-[190px]">
+                                11. Goroutines / channels.go
+                              </span>
+                              <span className="rounded border px-1.5 py-0.2 text-[9px] font-semibold border-(--border-strong) bg-(--bg-2) text-(--text)">
+                                Go 1.24
+                              </span>
+                            </div>
+
+                            {/* Code Block Snippet */}
+                            <div className="py-1.5 space-y-0.5 text-[10px] sm:text-[11px] overflow-hidden text-(--text-2)">
+                              <div>
+                                <span className="text-(--text-3)">package</span>{" "}
+                                <span className="text-(--text) font-semibold">main</span>
+                              </div>
+                              <div>
+                                <span className="text-(--text-3)">func</span>{" "}
+                                <span className="text-(--text) font-semibold">prepareDrink</span>(ch{" "}
+                                <span className="text-(--text-3)">chan</span> string) &#123;
+                              </div>
+                              <div className="pl-3.5 text-(--text-3)">
+                                ch &lt;- &quot;Latte ready&quot;
+                              </div>
+                              <div>&#125;</div>
+                              <div className="pt-0.5">
+                                <span className="text-(--text-3)">func</span>{" "}
+                                <span className="text-(--text) font-semibold">main</span>() &#123;
+                              </div>
+                              <div className="pl-3.5">
+                                ch := <span className="text-(--text-3)">make</span>(
+                                <span className="text-(--text-3)">chan</span> string)
+                              </div>
+                              <div className="pl-3.5 text-(--text)">
+                                <span className="text-(--text-3)">go</span> prepareDrink(ch)
+                              </div>
+                              <div className="pl-3.5">
+                                order := &lt;-ch
+                              </div>
+                              <div>&#125;</div>
+                            </div>
+
+                            {/* Bottom Chapter Bar */}
+                            <div className="border-t pt-1.5 flex items-center justify-between text-[9.5px] border-(--border) text-(--text-3)">
+                              <span>11 Chapters • 40+ Labs</span>
+                              <span className="text-(--text) group-hover/preview:underline font-medium">
+                                Inspect Code ↗
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </a>
-                    <span className="text-(--border-strong)">•</span>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-[11px] text-(--text-3) hover:text-(--text) transition-colors"
-                    >
-                      Source Code ↗
-                    </a>
+
+                    {/* Project Title with Linkable Link */}
+                    <div className="mt-6 flex items-start justify-between gap-4">
+                      <div>
+                        <span className="font-mono text-[10px] uppercase tracking-wider text-(--text-3)">
+                          {project.category}
+                        </span>
+                        <h3 className="text-[20px] font-semibold tracking-tight text-(--text) mt-0.5">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline underline-offset-4 transition-colors inline-flex items-center gap-1.5"
+                          >
+                            {project.title}
+                            <span className="text-[13px] text-(--text-3) transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-(--text)">
+                              ↗
+                            </span>
+                          </a>
+                        </h3>
+                        <p className="mt-1 text-[13px] font-medium text-(--text-2)">
+                          {project.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="mt-4 text-[14px] leading-relaxed text-(--text-2)">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Footer with Minimalist Tags & Actions */}
+                  <div className="mt-6 border-t pt-5 border-(--border)">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border bg-(--bg-2) px-2.5 py-0.5 font-mono text-[10px] text-(--text-2) border-(--border)"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 flex items-center gap-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[11px] text-(--text) hover:underline underline-offset-4 flex items-center gap-1 font-medium"
+                      >
+                        {project.ctaText ?? "View Live Project ↗"}
+                      </a>
+                      <span className="text-(--border-strong)">•</span>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[11px] text-(--text-3) hover:text-(--text) transition-colors"
+                      >
+                        Source Code ↗
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
           </div>
         </section>
 
