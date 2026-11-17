@@ -103,14 +103,27 @@ const POSTS: Post[] = [
     read: "09 MIN",
     href: "/blog/system-design/database/cap-theorem",
   },
+  {
+    id: "08",
+    date: "NOV 17, 2026",
+    isoDate: "2026-11-17",
+    tag: "GOLANG",
+    topicGroup: "Golang",
+    title: "Introduction to Golang: Simple, Fast & Concurrent",
+    excerpt:
+      "A systems developer's guide to Go: radical simplicity, pointer semantics without pointer arithmetic, interface polymorphism, and native concurrency with goroutines and channels.",
+    read: "12 MIN",
+    href: "/blog/golang",
+  },
 ];
 
 const TOPICS = [
-  { name: "All", count: 7 },
+  { name: "All", count: 8 },
   { name: "Creational Patterns", count: 2 },
   { name: "System Design", count: 2 },
   { name: "Object-Oriented Design", count: 2 },
   { name: "Distributed Systems", count: 1 },
+  { name: "Golang", count: 1 },
 ];
 
 const SINGLETON_HERO_CODE = `class DatabaseConnectionPool {

@@ -174,6 +174,15 @@ const ARTICLES: ArticleLink[] = [
     href: "/blog/system-design/object-oriented-programming/introduction-to-object-oriented-programming",
     date: "NOV 2026",
   },
+  {
+    title: "Introduction to Golang: Simple, Fast & Concurrent",
+    description:
+      "A systems developer&apos;s guide to Go: radical simplicity, pointer semantics without pointer arithmetic, interface polymorphism, and native concurrency with goroutines and channels.",
+    category: "Systems Programming",
+    readTime: "12 MINS",
+    href: "/blog/golang",
+    date: "NOV 2026",
+  },
 ];
 
 export default function Home() {
