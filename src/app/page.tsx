@@ -180,7 +180,7 @@ const ARTICLES: ArticleLink[] = [
       "A systems developer&apos;s guide to Go: radical simplicity, pointer semantics without pointer arithmetic, interface polymorphism, and native concurrency with goroutines and channels.",
     category: "Systems Programming",
     readTime: "12 MINS",
-    href: "/blog/golang",
+    href: "/blog/golang/introduction-to-golang",
     date: "NOV 2026",
   },
   {
