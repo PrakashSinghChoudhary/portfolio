@@ -113,17 +113,29 @@ const POSTS: Post[] = [
     excerpt:
       "A systems developer's guide to Go: radical simplicity, pointer semantics without pointer arithmetic, interface polymorphism, and native concurrency with goroutines and channels.",
     read: "12 MIN",
-    href: "/blog/golang",
+    href: "/blog/golang/introduction-to-golang",
+  },
+  {
+    id: "09",
+    date: "NOV 17, 2026",
+    isoDate: "2026-11-17",
+    tag: "GOLANG",
+    topicGroup: "Golang",
+    title: "Data Types in Golang: Primitives, Slices & Memory Alignment",
+    excerpt:
+      "Master Go's type foundations: deterministic zero values, 24-byte slice headers, struct memory padding, escape analysis, and the subtle nil interface gotcha.",
+    read: "14 MIN",
+    href: "/blog/golang/data-types",
   },
 ];
 
 const TOPICS = [
-  { name: "All", count: 8 },
+  { name: "All", count: 9 },
   { name: "Creational Patterns", count: 2 },
   { name: "System Design", count: 2 },
   { name: "Object-Oriented Design", count: 2 },
   { name: "Distributed Systems", count: 1 },
-  { name: "Golang", count: 1 },
+  { name: "Golang", count: 2 },
 ];
 
 const SINGLETON_HERO_CODE = `class DatabaseConnectionPool {

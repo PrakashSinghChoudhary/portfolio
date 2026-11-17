@@ -183,6 +183,15 @@ const ARTICLES: ArticleLink[] = [
     href: "/blog/golang",
     date: "NOV 2026",
   },
+  {
+    title: "Data Types in Golang: Primitives to Struct Alignment",
+    description:
+      "Master Go&apos;s type foundations: deterministic zero values, 24-byte slice headers, struct memory padding, escape analysis, and the subtle nil interface gotcha.",
+    category: "Systems Programming",
+    readTime: "14 MINS",
+    href: "/blog/golang/data-types",
+    date: "NOV 2026",
+  },
 ];
 
 export default function Home() {

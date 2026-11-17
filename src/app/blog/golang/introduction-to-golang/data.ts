@@ -1,84 +1,84 @@
 export const date = "17 Nov 2026";
 
 export const tableOfContent = [
-  {
-    num: "01",
-    id: "why-go-exists",
-    label: "Why Go Exists",
-  },
-  {
-    num: "02",
-    id: "packages-and-toolchain",
-    label: "Packages & Toolchain",
-  },
-  {
-    num: "03",
-    id: "type-system-and-pointers",
-    label: "Type System & Pointers",
-  },
-  {
-    num: "04",
-    id: "structs-and-composition",
-    label: "Structs & Composition",
-  },
-  {
-    num: "05",
-    id: "implicit-interfaces",
-    label: "Implicit Interfaces",
-  },
-  {
-    num: "06",
-    id: "explicit-error-handling",
-    label: "Explicit Error Handling",
-  },
-  {
-    num: "07",
-    id: "concurrency-goroutines-channels",
-    label: "Goroutines & Channels",
-  },
-  {
-    num: "08",
-    id: "slices-and-memory-model",
-    label: "Slices & Memory Model",
-  },
-  {
-    num: "09",
-    id: "when-to-choose-go",
-    label: "When to Choose Go",
-  },
+	{
+		num: "01",
+		id: "why-go-exists",
+		label: "Why Go Exists",
+	},
+	{
+		num: "02",
+		id: "packages-and-toolchain",
+		label: "Packages & Toolchain",
+	},
+	{
+		num: "03",
+		id: "type-system-and-pointers",
+		label: "Type System & Pointers",
+	},
+	{
+		num: "04",
+		id: "structs-and-composition",
+		label: "Structs & Composition",
+	},
+	{
+		num: "05",
+		id: "implicit-interfaces",
+		label: "Implicit Interfaces",
+	},
+	{
+		num: "06",
+		id: "explicit-error-handling",
+		label: "Explicit Error Handling",
+	},
+	{
+		num: "07",
+		id: "concurrency-goroutines-channels",
+		label: "Goroutines & Channels",
+	},
+	{
+		num: "08",
+		id: "slices-and-memory-model",
+		label: "Slices & Memory Model",
+	},
+	{
+		num: "09",
+		id: "when-to-choose-go",
+		label: "When to Choose Go",
+	},
 ];
 
 export const calloutPhilosophy = [
-  {
-    k: "SIMPLICITY AS A CORE FEATURE",
-    d: "Go was deliberately designed with only 25 keywords. By rejecting complex language features like inheritance, pointer arithmetic, and implicit conversions, Go ensures that code written by any engineer is instantly readable by any other engineer.",
-    bad: false,
-    title: "PHILOSOPHY",
-  },
+	{
+		k: "SIMPLICITY AS A CORE FEATURE",
+		d: "Go was deliberately designed with only 25 keywords. By rejecting complex language features like inheritance, pointer arithmetic, and implicit conversions, Go ensures that code written by any engineer is instantly readable by any other engineer.",
+		bad: false,
+		title: "PHILOSOPHY",
+	},
 ];
 
 export const calloutConcurrency = [
-  {
-    k: "THE GO CONCURRENCY MAXIM",
-    d: "Do not communicate by sharing memory; instead, share memory by communicating. Goroutines and typed channels allow independent processes to synchronize safely without lock contention and deadlocks.",
-    bad: false,
-    title: "CONCURRENCY",
-  },
+	{
+		k: "THE GO CONCURRENCY MAXIM",
+		d: "Do not communicate by sharing memory; instead, share memory by communicating. Goroutines and typed channels allow independent processes to synchronize safely without lock contention and deadlocks.",
+		bad: false,
+		title: "CONCURRENCY",
+	},
 ];
 
 export const calloutComposition = [
-  {
-    k: "COMPOSITION OVER INHERITANCE",
-    d: "Go contains no class keyword and no extends keyword. Type relationships are built exclusively through struct embedding and implicit interface satisfaction, eliminating brittle class hierarchies entirely.",
-    bad: false,
-    title: "ARCHITECTURE",
-  },
+	{
+		k: "COMPOSITION OVER INHERITANCE",
+		d: "Go contains no class keyword and no extends keyword. Type relationships are built exclusively through struct embedding and implicit interface satisfaction, eliminating brittle class hierarchies entirely.",
+		bad: false,
+		title: "ARCHITECTURE",
+	},
 ];
 
 export const breadcrumbs = [
-  { link: "/blog", text: "Blog" },
-  { link: "/blog/golang", text: "Golang" },
-  { link: "", text: "Introduction to Golang" },
+	{ link: "/blog", text: "Blog" },
+	{ link: "/blog/golang", text: "Golang" },
+	{ link: "", text: "Introduction to Golang" },
 ];
 
 export const helloWorldCode = `package main
@@ -170,7 +170,7 @@ type EmailNotifier struct {
 }
 
 func (e EmailNotifier) Send(recipient string, message string) error {
-	fmt.Printf("Email to %s: %s\n", recipient, message)
+	fmt.Printf("Email to %s: %s\\n", recipient, message)
 	return nil
 }
 
@@ -179,7 +179,7 @@ type WebhookNotifier struct {
 }
 
 func (w WebhookNotifier) Send(recipient string, message string) error {
-	fmt.Printf("Webhook to %s: %s\n", recipient, message)
+	fmt.Printf("Webhook to %s: %s\\n", recipient, message)
 	return nil
 }
 
@@ -232,7 +232,7 @@ func main() {
 			fmt.Println("User missing from cache")
 			return
 		}
-		fmt.Printf("Unexpected failure: %v\n", err)
+		fmt.Printf("Unexpected failure: %v\\n", err)
 		return
 	}
 
@@ -300,7 +300,7 @@ export const slicesMemoryCode = `package main
 import "fmt"
 
 func inspectSlice(name string, s []int) {
-	fmt.Printf("%s: len=%d cap=%d ptr=%p data=%v\n", name, len(s), cap(s), s, s)
+	fmt.Printf("%s: len=%d cap=%d ptr=%p data=%v\\n", name, len(s), cap(s), s, s)
 }
 
 func main() {
