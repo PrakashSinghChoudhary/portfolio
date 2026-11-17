@@ -129,7 +129,7 @@ export default function IntroductionToGolangPage() {
           <p className="content">
             The creators evaluated every language concept through a ruthless
             question: <em>Does the complexity of this feature earn its keep across
-            millions of lines of code and hundreds of engineers?</em>
+              millions of lines of code and hundreds of engineers?</em>
           </p>
 
           <BulletList
@@ -245,7 +245,7 @@ export default function IntroductionToGolangPage() {
           <Pointer {...tableOfContent[3]} />
           <p className="content">
             Traditional Object-Oriented languages construct software using class
-            hierarchies and inheritance. Go intentionally rejects classes in favor of
+            hierarchies and inheritance. Go intentionally rejects classes in favor of{" "}
             <strong>Structs</strong> and <strong>Composition</strong>.
           </p>
           <p className="content">
