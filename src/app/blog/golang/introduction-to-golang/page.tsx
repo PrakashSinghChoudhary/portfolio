@@ -359,29 +359,25 @@ export default function IntroductionToGolangPage() {
                     </p>
 
                     <CodeBlock
-                        filename="worker_pool.go"
+                        filename="concurrency.go"
                         code={concurrencyCode}
                         langLabel="Go"
                     />
 
                     <NumberedList
-                        heading="How the Concurrent Worker Pool Operates"
+                        heading="How Goroutines and Channels Work"
                         list={[
                             <>
-                                <strong>Spawning Workers:</strong> The <Code code="go worker(...)" /> keyword
-                                launches each worker as an independent concurrent goroutine.
+                                <strong>Spawning Goroutines:</strong> The <Code code="go fetchStatus(...)" /> keyword
+                                launches each task concurrently on a lightweight 2KB green thread.
                             </>,
                             <>
-                                <strong>Job Distribution:</strong> Jobs are pushed into a buffered channel. The
-                                first available worker dequeues the job without race conditions.
+                                <strong>Sending to Channel:</strong> Inside each goroutine, <Code code="ch <- msg" /> transmits
+                                the result safely without locks or mutexes.
                             </>,
                             <>
-                                <strong>Synchronization via WaitGroup:</strong> A <Code code="sync.WaitGroup" /> tracks
-                                the completion of all workers before the main routine shuts down.
-                            </>,
-                            <>
-                                <strong>Graceful Channel Closure:</strong> The channel is closed once all items
-                                are queued, signaling to workers that no more work remains.
+                                <strong>Receiving from Channel:</strong> The main routine receives messages using{" "}
+                                <Code code="msg := <-ch" />, blocking cleanly until data arrives.
                             </>,
                         ]}
                     />

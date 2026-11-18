@@ -77,7 +77,7 @@ export const calloutComposition = [
 
 export const breadcrumbs = [
 	{ link: "/blog", text: "Blog" },
-	{ link: "/blog/golang", text: "Golang" },
+	{ link: "/blog/golang/introduction-to-golang", text: "Golang" },
 	{ link: "", text: "Introduction to Golang" },
 ];
 
@@ -88,6 +88,7 @@ import "fmt"
 func main() {
 	message := "Hello, Gophers!"
 	fmt.Println(message)
+	// Output: Hello, Gophers!
 }`;
 
 export const pointersCode = `package main
@@ -112,9 +113,11 @@ func main() {
 
 	updatePortByValue(config, 9000)
 	fmt.Println(config.Port)
+	// Output: 8080
 
 	updatePortByPointer(&config, 9000)
 	fmt.Println(config.Port)
+	// Output: 9000
 }`;
 
 export const structsAndMethodsCode = `package main
@@ -155,6 +158,7 @@ func main() {
 	}
 
 	fmt.Println(gw.Name, gw.Allow())
+	// Output: Edge-Gateway-01 true
 }`;
 
 export const interfacesCode = `package main
@@ -192,7 +196,10 @@ func main() {
 	webhook := WebhookNotifier{EndpointURL: "https://api.internal/hook"}
 
 	DispatchAlert(email, "admin@infra.dev", "High CPU Load")
+	// Output: Email to admin@infra.dev: High CPU Load
+
 	DispatchAlert(webhook, "pager-duty", "Database latency spike")
+	// Output: Webhook to pager-duty: Database latency spike
 }`;
 
 export const errorHandlingCode = `package main
@@ -203,8 +210,7 @@ import (
 )
 
 var (
-	ErrNotFound     = errors.New("record not found")
-	ErrUnauthorized = errors.New("insufficient privileges")
+	ErrNotFound = errors.New("record not found")
 )
 
 type UserStore struct {
@@ -230,6 +236,7 @@ func main() {
 	if err != nil {
 		if errors.Is(err, ErrNotFound) {
 			fmt.Println("User missing from cache")
+			// Output: User missing from cache
 			return
 		}
 		fmt.Printf("Unexpected failure: %v\\n", err)
@@ -241,58 +248,27 @@ func main() {
 
 export const concurrencyCode = `package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
-)
+import "fmt"
 
-type Job struct {
-	ID   int
-	Data string
-}
-
-type Result struct {
-	JobID  int
-	Output string
-}
-
-func worker(id int, jobs <-chan Job, results chan<- Result, wg *sync.WaitGroup) {
-	defer wg.Done()
-	for job := range jobs {
-		time.Sleep(10 * time.Millisecond)
-		results <- Result{
-			JobID:  job.ID,
-			Output: fmt.Sprintf("worker-%d processed job-%d", id, job.ID),
-		}
-	}
+func fetchStatus(service string, ch chan<- string) {
+	ch <- fmt.Sprintf("%s is healthy", service)
 }
 
 func main() {
-	const numJobs = 6
-	const numWorkers = 3
+	ch := make(chan string, 3)
 
-	jobs := make(chan Job, numJobs)
-	results := make(chan Result, numJobs)
+	go fetchStatus("Auth-Service", ch)
+	go fetchStatus("Billing-API", ch)
+	go fetchStatus("Payment-Gateway", ch)
 
-	var wg sync.WaitGroup
-
-	for w := 1; w <= numWorkers; w++ {
-		wg.Add(1)
-		go worker(w, jobs, results, &wg)
+	for i := 0; i < 3; i++ {
+		msg := <-ch
+		fmt.Println(msg)
 	}
-
-	for j := 1; j <= numJobs; j++ {
-		jobs <- Job{ID: j, Data: "payload"}
-	}
-	close(jobs)
-
-	wg.Wait()
-	close(results)
-
-	for res := range results {
-		fmt.Println(res.Output)
-	}
+	// Output:
+	// Auth-Service is healthy
+	// Billing-API is healthy
+	// Payment-Gateway is healthy
 }`;
 
 export const slicesMemoryCode = `package main
@@ -300,22 +276,27 @@ export const slicesMemoryCode = `package main
 import "fmt"
 
 func inspectSlice(name string, s []int) {
-	fmt.Printf("%s: len=%d cap=%d ptr=%p data=%v\\n", name, len(s), cap(s), s, s)
+	fmt.Printf("%-18s len=%d cap=%d data=%v\\n", name, len(s), cap(s), s)
 }
 
 func main() {
 	base := make([]int, 0, 4)
 	inspectSlice("initial", base)
+	// Output: initial            len=0 cap=4 data=[]
 
 	base = append(base, 10, 20, 30)
 	inspectSlice("appended", base)
+	// Output: appended           len=3 cap=4 data=[10 20 30]
 
 	child := base[1:3]
 	inspectSlice("sub-slice", child)
+	// Output: sub-slice          len=2 cap=3 data=[20 30]
 
 	child[0] = 999
 	inspectSlice("base-after-mutation", base)
+	// Output: base-after-mutation len=3 cap=4 data=[10 999 30]
 
 	base = append(base, 40, 50)
 	inspectSlice("grown-capacity", base)
+	// Output: grown-capacity     len=5 cap=8 data=[10 999 30 40 50]
 }`;

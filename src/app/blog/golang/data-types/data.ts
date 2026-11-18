@@ -77,7 +77,7 @@ export const calloutInterfaceNilGotcha = [
 
 export const breadcrumbs = [
 	{ link: "/blog", text: "Blog" },
-	{ link: "/blog/golang", text: "Golang" },
+	{ link: "/blog/golang/introduction-to-golang", text: "Golang" },
 	{ link: "", text: "Data Types in Golang" },
 ];
 
@@ -93,10 +93,19 @@ func main() {
 	var rawByte byte = 0xFF
 
 	fmt.Printf("count: %d (type: %T)\\n", count, count)
+	// Output: count: 42 (type: int)
+
 	fmt.Printf("threshold: %.1f (type: %T)\\n", threshold, threshold)
+	// Output: threshold: 98.6 (type: float64)
+
 	fmt.Printf("isActive: %t (type: %T)\\n", isActive, isActive)
+	// Output: isActive: true (type: bool)
+
 	fmt.Printf("char: %c (code point: %U)\\n", char, char)
+	// Output: char: ⌘ (code point: U+2318)
+
 	fmt.Printf("rawByte: %d (hex: 0x%X)\\n", rawByte, rawByte)
+	// Output: rawByte: 255 (hex: 0xFF)
 }`;
 
 export const zeroValuesCode = `package main
@@ -116,11 +125,22 @@ func main() {
 	var m Metrics
 
 	fmt.Println("TotalRequests:", m.TotalRequests)
+	// Output: TotalRequests: 0
+
 	fmt.Println("ErrorRate:    ", m.ErrorRate)
+	// Output: ErrorRate:     0
+
 	fmt.Println("IsDegraded:   ", m.IsDegraded)
+	// Output: IsDegraded:    false
+
 	fmt.Printf("ServiceName:   %q\\n", m.ServiceName)
-	fmt.Println("LatencyTrace: ", m.LatencyTrace == nil)
-	fmt.Println("CacheRef:     ", m.CacheRef == nil)
+	// Output: ServiceName:   ""
+
+	fmt.Println("LatencyTrace is nil:", m.LatencyTrace == nil)
+	// Output: LatencyTrace is nil: true
+
+	fmt.Println("CacheRef is nil:    ", m.CacheRef == nil)
+	// Output: CacheRef is nil:     true
 }`;
 
 export const stringsRunesCode = `package main
@@ -134,16 +154,24 @@ func main() {
 	sample := "Hello, 世界"
 
 	fmt.Println("Byte length:", len(sample))
-	fmt.Println("Rune length:", utf8.RuneCountInString(sample))
+	// Output: Byte length: 13
 
-	for i := 0; i < len(sample); i++ {
-		fmt.Printf("%x ", sample[i])
-	}
-	fmt.Println()
+	fmt.Println("Rune length:", utf8.RuneCountInString(sample))
+	// Output: Rune length: 9
 
 	for idx, r := range sample {
 		fmt.Printf("Index %2d: %c (U+%04X)\\n", idx, r, r)
 	}
+	// Output:
+	// Index  0: H (U+0048)
+	// Index  1: e (U+0065)
+	// Index  2: l (U+006C)
+	// Index  3: l (U+006C)
+	// Index  4: o (U+006F)
+	// Index  5: , (U+002C)
+	// Index  6:   (U+0020)
+	// Index  7: 世 (U+4E16)
+	// Index 10: 界 (U+754C)
 }`;
 
 export const slicesCode = `package main
@@ -153,18 +181,22 @@ import "fmt"
 func main() {
 	fixedArray := [3]string{"us-east-1", "us-west-2", "eu-central-1"}
 	fmt.Printf("Array type: %T, len: %d\\n", fixedArray, len(fixedArray))
+	// Output: Array type: [3]string, len: 3
 
 	dynamicSlice := make([]int, 0, 4)
 	fmt.Printf("Slice: len=%d cap=%d\\n", len(dynamicSlice), cap(dynamicSlice))
+	// Output: Slice: len=0 cap=4
 
-	for i := 1; i <= 5; i++ {
+	for i := 1; i <= 3; i++ {
 		dynamicSlice = append(dynamicSlice, i*10)
-		fmt.Printf("Appended %d -> len=%d cap=%d\\n", i*10, len(dynamicSlice), cap(dynamicSlice))
 	}
+	fmt.Printf("After 3 appends: %v (len=%d cap=%d)\\n", dynamicSlice, len(dynamicSlice), cap(dynamicSlice))
+	// Output: After 3 appends: [10 20 30] (len=3 cap=4)
 
-	window := dynamicSlice[1:4]
+	window := dynamicSlice[1:3]
 	window[0] = 999
 	fmt.Println("Modified dynamicSlice through window:", dynamicSlice)
+	// Output: Modified dynamicSlice through window: [10 999 30]
 }`;
 
 export const mapsCode = `package main
@@ -174,23 +206,27 @@ import "fmt"
 func main() {
 	var uninitialized map[string]int
 	fmt.Println("Uninitialized is nil:", uninitialized == nil)
+	// Output: Uninitialized is nil: true
+
 	fmt.Println("Read from nil map:", uninitialized["missing"])
+	// Output: Read from nil map: 0
 
 	routes := make(map[string]string)
 	routes["/health"] = "HealthController"
 	routes["/metrics"] = "MetricsController"
 
 	handler, exists := routes["/checkout"]
-	if !exists {
-		fmt.Println("Route /checkout is not registered")
-	} else {
-		fmt.Println("Found handler:", handler)
-	}
+	fmt.Println("Route /checkout exists:", exists)
+	// Output: Route /checkout exists: false
 
 	routes["/checkout"] = "CheckoutController"
-	delete(routes, "/health")
+	handler, exists = routes["/checkout"]
+	fmt.Printf("Found handler: %s (exists=%t)\\n", handler, exists)
+	// Output: Found handler: CheckoutController (exists=true)
 
+	delete(routes, "/health")
 	fmt.Println("Total active routes:", len(routes))
+	// Output: Total active routes: 2
 }`;
 
 export const structsMemoryCode = `package main
@@ -221,13 +257,16 @@ func main() {
 	var unaligned UnalignedUser
 	var aligned AlignedUser
 
-	fmt.Printf("UnalignedUser struct size: %d bytes\\n", unsafe.Sizeof(unaligned))
-	fmt.Printf("AlignedUser   struct size: %d bytes\\n", unsafe.Sizeof(aligned))
+	fmt.Printf("UnalignedUser size: %d bytes\\n", unsafe.Sizeof(unaligned))
+	// Output: UnalignedUser size: 32 bytes
+
+	fmt.Printf("AlignedUser   size: %d bytes\\n", unsafe.Sizeof(aligned))
+	// Output: AlignedUser   size: 24 bytes
 
 	var tenant TenantID = 1001
 	var customer CustomerID = 1001
-
-	fmt.Println("Tenant ID:", tenant, "Customer ID:", customer)
+	fmt.Printf("Tenant: %d, Customer: %d\\n", tenant, customer)
+	// Output: Tenant: 1001, Customer: 1001
 }`;
 
 export const pointersEscapeCode = `package main
@@ -259,7 +298,10 @@ func main() {
 	extendTTL(heapSess, 1800)
 
 	fmt.Printf("Stack Session: %+v\\n", stackSess)
+	// Output: Stack Session: {Token:sess_local_456 TTL:3600}
+
 	fmt.Printf("Heap Session:  %+v\\n", *heapSess)
+	// Output: Heap Session:  {Token:sess_heap_789 TTL:9000}
 }`;
 
 export const interfacesAnyCode = `package main
@@ -283,7 +325,10 @@ func demonstrateNilInterfaceTrap() {
 	var parser PayloadParser = concrete
 
 	fmt.Println("concrete == nil: ", concrete == nil)
+	// Output: concrete == nil:  true
+
 	fmt.Println("parser == nil:   ", parser == nil)
+	// Output: parser == nil:    false
 }
 
 func inspectDynamicType(val any) {
@@ -303,6 +348,11 @@ func main() {
 	demonstrateNilInterfaceTrap()
 
 	inspectDynamicType(1024)
+	// Output: Received integer: 2048
+
 	inspectDynamicType("distributed-kv-store")
+	// Output: Received string: 20
+
 	inspectDynamicType(true)
+	// Output: Received boolean: true
 }`;
