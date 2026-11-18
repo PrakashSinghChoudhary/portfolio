@@ -127,15 +127,39 @@ const POSTS: Post[] = [
     read: "14 MIN",
     href: "/blog/golang/data-types",
   },
+  {
+    id: "10",
+    date: "NOV 18, 2026",
+    isoDate: "2026-11-18",
+    tag: "GOLANG",
+    topicGroup: "Golang",
+    title: "Working with Databases in Go: PostgreSQL, pgx & sqlc",
+    excerpt:
+      "A straightforward guide to modern database development in Go: write raw SQL schema and CRUD queries, compile with sqlc for type safety, and connect with pgxpool without ORM complexity.",
+    read: "10 MIN",
+    href: "/blog/golang/working-with-database",
+  },
+  {
+    id: "11",
+    date: "NOV 18, 2026",
+    isoDate: "2026-11-18",
+    tag: "GOLANG",
+    topicGroup: "Golang",
+    title: "Arrays and Slices in Go: Internals, Capacity & Memory Leaks",
+    excerpt:
+      "Master the mechanics of Go slices: the 24-byte header, geometric append growth, the 3-index slice expression, shared backing array mutation hazards, and preventing subtle GC retention leaks.",
+    read: "11 MIN",
+    href: "/blog/golang/arrays-and-slices",
+  },
 ];
 
 const TOPICS = [
-  { name: "All", count: 9 },
+  { name: "All", count: 11 },
   { name: "Creational Patterns", count: 2 },
   { name: "System Design", count: 2 },
   { name: "Object-Oriented Design", count: 2 },
   { name: "Distributed Systems", count: 1 },
-  { name: "Golang", count: 2 },
+  { name: "Golang", count: 4 },
 ];
 
 const SINGLETON_HERO_CODE = `class DatabaseConnectionPool {
